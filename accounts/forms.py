@@ -10,7 +10,7 @@ class LoginForm(forms.Form):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder': 'Enter your Email*', 
                                                     'class':'form-control', 'id':'pass'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password*',
-                                                    'class':'form-control border-right-0', 'data-toggle': 'password'}))
+                                                    'class':'form-control pass-input'}))
 
     fields = ['email', 'password']
 
@@ -50,8 +50,8 @@ class RegistrationForm(forms.Form):
                                                     'class':'form-control'}))
     email = forms.EmailField(label='Email', max_length=100, widget=forms.EmailInput(attrs={'class': 'form-control' , 'placeholder': 'Email'}))
     phone_number = forms.CharField(label='Phone No', max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Phone No'}))
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control border-right-0', 'placeholder': 'Password'}))
-    confirm_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control border-right-0', 'placeholder': 'Confirm Password'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control pass-input', 'placeholder': 'Password'}))
+    confirm_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control pass-input', 'placeholder': 'Confirm Password'}))
 
     fields = ['email', 'phone_number', 'password', 'confirm_password']
 
