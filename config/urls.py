@@ -23,3 +23,8 @@ urlpatterns = [
     path('books/', include('books.urls', namespace='books')),
 
 ]
+
+admin.site.site_header = 'BookShare Admin'
+admin.site.site_title = 'BookShare Admin Portal'
+admin.site.index_title = 'Welcome to BookShare Admin Portal'
+

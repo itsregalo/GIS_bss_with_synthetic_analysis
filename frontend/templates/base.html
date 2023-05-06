@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<title>Listee | Template</title>
+	<title>BSGIS | {% block title %}{% endblock title %}</title>
 
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}">
@@ -49,20 +49,20 @@
 								<span></span>
 							</span>
 						</a>
-						<a href="index.html" class="navbar-brand logo">
+						<a href="{% url 'core:index' %}" class="navbar-brand logo">
 							<img src="{% static 'assets/img/logo.svg' %}" class="img-fluid" alt="Logo">
 						</a>						
 					</div>
 					<div class="main-menu-wrapper">
 						<div class="menu-header">
-							<a href="index.html" class="menu-logo">
+							<a href="{% url 'core:index' %}" class="menu-logo">
 								<img src="{% static 'assets/img/logo.svg' %}" class="img-fluid" alt="Logo">
 							</a>
 							<a id="menu_close" class="menu-close" href="javascript:void(0);"> <i class="fas fa-times"></i></a>
 						</div>
 						<ul class="main-nav">
 							<li class="has-submenu megamenu active">
-								<a href="index.html">Home <i class="fas "></i></a>
+								<a href="{% url 'core:index' %}">Home <i class="fas "></i></a>
 								
 							</li>
 							<li class="has-submenu">

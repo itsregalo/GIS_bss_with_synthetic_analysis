@@ -15,10 +15,27 @@ class BookOwner(models.Model):
 
     def __str__(self):
         return self.user.username
+    
+class BookCategory(models.Model):
+    name = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, unique=True)
+
+    class Meta:
+        db_table = 'book_category'
+
+    def __str__(self):
+        return self.name
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+
+        return super(BookCategory, self).save(*args, **kwargs)
 
 class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
+    category = models.ForeignKey(BookCategory, on_delete=models.CASCADE)
     description = models.TextField()
     cover_image = models.ImageField(upload_to='book_covers/')
     owner = models.ForeignKey(BookOwner, on_delete=models.CASCADE)
@@ -86,4 +103,4 @@ class LendRequest(models.Model):
 
     def __str__(self):
         return self.book.title
-        
+    
