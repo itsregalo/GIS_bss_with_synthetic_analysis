@@ -1,0 +1,1047 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Home {% endblock title %}
+
+
+{% block body %}
+
+		
+		<!-- Banner Section -->
+        <section class="banner-section">	
+            <div class="banner-circle">
+                   <img src="{% static 'assets/img/bannerbg.png' %}" class="img-fluid" alt="bannercircle">
+           </div>		
+           <div class="container">
+               <div class="home-banner">		
+                   <div class="row align-items-center">					    
+                       <div class="col-lg-7">
+                           <div class="section-search aos" data-aos="fade-up">
+                               <p class="explore-text"> <span>Explore top-rated attractions</span></p>
+                                <img src="{% static 'assets/img/arrow-banner.png' %}" class="arrow-img" alt="arrow">
+                                <h1>Let us help you <br>
+                                <span>Find, Buy</span> & Own Dreams</h1>
+                                <p>Countrys most loved and trusted classified ad listing website classified ad.randomised words which don't look even slightly Browse thousand of items near you.</p>
+                                   <div class="search-box">
+                                     <form action="listing-grid-sidebar.html" class="d-flex"> 
+                                       <div class="search-input line">											
+                                           <div class="form-group">																							
+                                               <select class="form-control select category-select">													
+                                                   <option value="">Choose Category</option>
+                                                   <option>Computer</option>
+                                                   <option>Automobile</option>
+                                                   <option>Car Wash</option>
+                                                   <option>Cleaning</option>
+                                                   <option>Electrical</option>
+                                                   <option>Construction</option>
+                                               </select>
+                                           </div>
+                                       </div>
+                                       <div class="search-input">											
+                                           <div class="form-group">												
+                                               <div class="group-img">
+                                                 <input type="text" class="form-control" placeholder="Choose Location">
+                                                 <i class="feather-map-pin"></i>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="search-btn">
+                                           <button class="btn btn-primary" type="submit"> <i class="fa fa-search" aria-hidden="true"></i> Search</button>
+                                       </div>
+                                     </form>
+                                   </div>
+                           </div>
+                       </div>
+                       <div class="col-lg-5">
+                           <div class="banner-imgs">
+                                 <img src="{% static 'assets/img/Right-img.png' %}" class="img-fluid" alt="bannerimage">							
+                           </div>
+                       </div>
+                   </div>
+               </div>	
+           </div>
+           <img src="{% static 'assets/img/bannerellipse.png' %}" class="img-fluid banner-elipse" alt="arrow">
+           <img src="{% static 'assets/img/banner-arrow.png' %}" class="img-fluid bannerleftarrow" alt="arrow">
+       </section>
+       <!-- /Banner Section -->
+       
+       <!-- Category Section -->
+       <section class="category-section">
+           <div class="container">
+              <div class="section-heading">
+                <div class="row align-items-center">
+                       <div class="col-md-6 aos aos-init aos-animate" data-aos="fade-up">
+                           <h2>Our  <span class="title-left">Cat</span>egory</h2>
+                           <p>Buy and Sell Everything from Used Our Top Category</p>
+                       </div>
+                       <div class="col-md-6 text-md-end aos aos-init aos-animate" data-aos="fade-up">
+                           <a href="categories.html" class="btn  btn-view">View All</a>
+                       </div>		
+                </div>			     
+              </div>	
+               <div class="row">
+                   <div class="col-lg-2 col-md-3 col-sm-6">
+                      <a href="categories.html" class="category-links">
+                         <h5>Automotive</h5>
+                         <span>09 Ads</span>
+                         <img src="{% static 'assets/img/icons/category-1.svg' %}" alt="icons">
+                      </a> 
+                   </div>
+                   <div class="col-lg-2 col-md-3 col-sm-6">
+                      <a href="categories.html" class="category-links">
+                         <h5>Electronics</h5>
+                         <span>09 Ads</span>
+                         <img src="{% static 'assets/img/icons/category-2.svg' %}" alt="icons">
+                      </a> 
+                   </div>
+                   <div class="col-lg-2 col-md-3 col-sm-6">
+                      <a href="categories.html" class="category-links">
+                         <h5>Fashion Style</h5>
+                         <span>09 Ads</span>
+                         <img src="{% static 'assets/img/icons/category-3.svg' %}" alt="icons">
+                      </a> 
+                   </div>
+                   <div class="col-lg-2 col-md-3 col-sm-6">
+                      <a href="categories.html" class="category-links">
+                         <h5>Health Care</h5>
+                         <span>09 Ads</span>
+                         <img src="{% static 'assets/img/icons/category-4.svg' %}" alt="icons">
+                      </a> 
+                   </div>
+                   <div class="col-lg-2 col-md-3 col-sm-6">
+                      <a href="categories.html" class="category-links">
+                         <h5>Job Board</h5>
+                         <span>09 Ads</span>
+                         <img src="{% static 'assets/img/icons/category-5.svg' %}" alt="icons">
+                      </a> 
+                   </div>
+                   <div class="col-lg-2 col-md-3 col-sm-6">
+                      <a href="categories.html" class="category-links">
+                         <h5>Education</h5>
+                         <span>09 Ads</span>
+                         <img src="{% static 'assets/img/icons/category-6.svg' %}" alt="icons">
+                      </a> 
+                   </div>
+                   <div class="col-lg-2 col-md-3 col-sm-6">
+                      <a href="categories.html" class="category-links">
+                         <h5>Real Estate</h5>
+                         <span>09 Ads</span>
+                         <img src="{% static 'assets/img/icons/category-7.svg' %}" alt="icons">
+                      </a> 
+                   </div>
+                   <div class="col-lg-2 col-md-3 col-sm-6">
+                      <a href="categories.html" class="category-links">
+                         <h5>Travel</h5>
+                         <span>09 Ads</span>
+                         <img src="{% static 'assets/img/icons/category-8.svg' %}" alt="icons">
+                      </a> 
+                   </div>
+                   <div class="col-lg-2 col-md-3 col-sm-6">
+                      <a href="categories.html" class="category-links">
+                         <h5>Sports & Game</h5>
+                         <span>09 Ads</span>
+                         <img src="{% static 'assets/img/icons/category-9.svg' %}" alt="icons">
+                      </a> 
+                   </div>
+                   <div class="col-lg-2 col-md-3 col-sm-6">
+                      <a href="categories.html" class="category-links">
+                         <h5>Magazines</h5>
+                         <span>09 Ads</span>
+                         <img src="{% static 'assets/img/icons/category-10.svg' %}" alt="icons">
+                      </a> 
+                   </div>
+                   <div class="col-lg-2 col-md-3 col-sm-6">
+                      <a href="categories.html" class="category-links">
+                         <h5>Pet & Animal</h5>
+                         <span>09 Ads</span>
+                         <img src="{% static 'assets/img/icons/category-11.svg' %}" alt="icons">
+                      </a> 
+                   </div>
+                   <div class="col-lg-2 col-md-3 col-sm-6">
+                      <a href="categories.html" class="category-links">
+                         <h5>House Hold</h5>
+                         <span>09 Ads</span>
+                         <img src="{% static 'assets/img/icons/category-12.svg' %}" alt="icons">
+                      </a> 
+                   </div>
+               </div>			   
+           </div>		
+       </section>		
+       <!-- /Category Section -->
+       
+       <!-- Featured ADS Section -->
+       <section class="featured-section">
+           <div class="container">
+               <div class="row align-items-center">
+                   <div class="col-md-6 aos aos-init aos-animate" data-aos="fade-up">
+                       <div class="section-heading">
+                           <h2>Featu<span class="title-right">red</span> Ads</h2>
+                           <p>Checkout these latest coo ads from our members</p>
+                       </div>						
+                   </div>
+                   <div class="col-md-6 text-md-end aos" data-aos="fade-up">
+                          <div class="owl-nav mynav2"></div>
+                   </div>					
+               </div>
+               <div class="row">
+                   <div class="col-md-12">						
+                       <div class="owl-carousel featured-slider grid-view">								
+                           <div class="card aos" data-aos="fade-up">
+                               <div class="blog-widget">
+                                   <div class="blog-img">
+                                       <a href="service-details.html">
+                                           <img src="{% static 'assets/img/featured/feature-9.jpg' %}" class="img-fluid" alt="blog-img">
+                                       </a>
+                                       <div class="fav-item">
+                                           <span class="Featured-text">Featured</span>
+                                           <a href="javascript:void(0)" class="fav-icon">
+                                               <i class="feather-heart"></i>
+                                           </a>										
+                                       </div>	
+                                   </div>
+                                   <div class="bloglist-content">
+                                       <div class="card-body">
+                                           <div class="blogfeaturelink">
+                                               <div class="grid-author">
+                                                   <img  src="{% static 'assets/img/profiles/avatar-02.jpg' %}" alt="author">
+                                               </div>
+                                               <div class="blog-features">
+                                                  <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i> Education</span></a>
+                                               </div>																	  
+                                               <div class="blog-author text-end"> 
+                                                   <span>  <i class="feather-eye"></i>4000 </span>
+                                               </div>
+                                           </div> 
+                                           <h6><a href="service-details.html">2017 Gulfsteam Ameri-lite</a></h6>																	 
+                                           <div class="blog-location-details">
+                                               <div class="location-info">
+                                                  <i class="feather-map-pin"></i> Los Angeles
+                                               </div>
+                                               <div class="location-info">
+                                                   <i class="fa-regular fa-calendar-days"></i> 06 Oct, 2022
+                                               </div>
+                                           </div>
+                                           <div class="amount-details">
+                                               <div class="amount">
+                                                   <span class="validrate">$350</span>
+                                                   <span>$450</span>
+                                               </div>
+                                               <div class="ratings">
+                                                   <span>4.7</span> (50)
+                                               </div>												
+                                           </div>	
+                                       </div>	
+                                   </div>			 
+                               </div> 
+                           </div>
+                           <div class="card aos" data-aos="fade-up">
+                               <div class="blog-widget">
+                                   <div class="blog-img">
+                                       <a href="service-details.html">
+                                           <img src="{% static 'assets/img/featured/feature-2.jpg' %}" class="img-fluid" alt="blog-img">
+                                       </a>
+                                       <div class="fav-item">
+                                           <span class="Featured-text">Featured</span>
+                                           <a href="javascript:void(0)" class="fav-icon">
+                                               <i class="feather-heart"></i>
+                                           </a>										
+                                       </div>	
+                                   </div>
+                                   <div class="bloglist-content">
+                                       <div class="card-body">
+                                           <div class="blogfeaturelink">
+                                               <div class="grid-author">
+                                                   <img  src="{% static 'assets/img/profiles/avatar-05.jpg' %}" alt="author">
+                                               </div>											    	
+                                               <div class="blog-features">
+                                                  <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i> Electronics</span></a>
+                                               </div>																	  
+                                               <div class="blog-author text-end"> 
+                                                   <span>   <i class="feather-eye"></i>4000  </span>
+                                               </div>
+                                           </div> 
+                                           <h6><a href="service-details.html">Fashion luxury Men date</a></h6>																	 
+                                           <div class="blog-location-details">
+                                               <div class="location-info">
+                                                  <i class="feather-map-pin"></i> Los Angeles
+                                               </div>
+                                               <div class="location-info">
+                                                   <i class="fa-solid fa-calendar-days"></i> 08 Oct, 2022
+                                               </div>
+                                           </div>
+                                           <div class="amount-details">
+                                               <div class="amount">
+                                                   <span class="validrate">$250</span>
+                                                   <span>$350</span>
+                                               </div>
+                                               <div class="ratings">
+                                                   <span>4.6</span> (50)
+                                               </div>												
+                                           </div>	
+                                       </div>	
+                                   </div>			 
+                               </div> 
+                           </div>										
+                           <div class="card aos" data-aos="fade-up">
+                               <div class="blog-widget">
+                                   <div class="blog-img">
+                                       <a href="service-details.html">
+                                           <img src="{% static 'assets/img/featured/feature-3.jpg' %}" class="img-fluid" alt="blog-img">
+                                       </a>
+                                       <div class="fav-item">
+                                           <span class="Featured-text">Featured</span>
+                                           <a href="javascript:void(0)" class="fav-icon">
+                                               <i class="feather-heart"></i>
+                                           </a>										
+                                       </div>	
+                                   </div>
+                                   <div class="bloglist-content">
+                                       <div class="card-body">
+                                           <div class="blogfeaturelink">
+                                               <div class="grid-author">
+                                                   <img  src="{% static 'assets/img/profiles/avatar-04.jpg' %}" alt="author">
+                                               </div>
+                                               <div class="blog-features">
+                                                  <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i> Electronics</span></a>
+                                               </div>																	  
+                                               <div class="blog-author text-end"> 
+                                                   <span>   <i class="feather-eye"></i>4000  </span>
+                                               </div>
+                                           </div> 
+                                           <h6><a href="service-details.html">Apple Iphone 6 16GB 4G LTE</a></h6>																	 
+                                           <div class="blog-location-details">
+                                               <div class="location-info">
+                                                  <i class="feather-map-pin"></i> Los Angeles
+                                               </div>
+                                               <div class="location-info">
+                                                   <i class="fa-solid fa-calendar-days"></i> 09 Oct, 2022
+                                               </div>
+                                           </div>
+                                           <div class="amount-details">
+                                               <div class="amount">
+                                                   <span class="validrate">$550</span>
+                                                   <span>$400</span>
+                                               </div>
+                                               <div class="ratings">
+                                                   <span>4.7</span> (50)
+                                               </div>												
+                                           </div>	
+                                       </div>	
+                                   </div>			 
+                               </div> 
+                           </div>																			
+                           <div class="card aos" data-aos="fade-up">
+                               <div class="blog-widget">
+                                   <div class="blog-img">
+                                       <a href="service-details.html">
+                                           <img src="{% static 'assets/img/featured/feature-4.jpg' %}" class="img-fluid" alt="blog-img">
+                                       </a>
+                                       <div class="fav-item">
+                                           <span class="Featured-text">Featured</span>
+                                           <a href="javascript:void(0)" class="fav-icon">
+                                               <i class="feather-heart"></i>
+                                           </a>										
+                                       </div>	
+                                   </div>
+                                   <div class="bloglist-content">
+                                       <div class="card-body">
+                                           <div class="blogfeaturelink">
+                                              <div class="grid-author">
+                                                   <img  src="{% static 'assets/img/profiles/avatar-05.jpg' %}" alt="author">
+                                               </div>	
+                                               <div class="blog-features">
+                                                  <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i> Gadgets</span></a>
+                                               </div>																	  
+                                               <div class="blog-author text-end"> 
+                                                   <span> <i class="feather-eye"></i>4000  </span>
+                                               </div>
+                                           </div> 
+                                           <h6><a href="service-details.html">Customized Apple Imac </a></h6>																	 
+                                           <div class="blog-location-details">
+                                               <div class="location-info">
+                                                  <i class="feather-map-pin"></i> Los Angeles
+                                               </div>
+                                               <div class="location-info">
+                                                   <i class="fa-solid fa-calendar-days"></i> 10 Oct, 2022
+                                               </div>
+                                           </div>
+                                           <div class="amount-details">
+                                               <div class="amount">
+                                                   <span class="validrate">$450</span>
+                                                   <span>$300</span>
+                                               </div>
+                                               <div class="ratings">
+                                                   <span>4.5</span> (50)
+                                               </div>												
+                                           </div>	
+                                       </div>	
+                                   </div>			 
+                               </div> 
+                           </div>	
+                           <div class="card aos" data-aos="fade-up">
+                               <div class="blog-widget">
+                                   <div class="blog-img">
+                                       <a href="service-details.html">
+                                           <img src="{% static 'assets/img/featured/feature-9.jpg' %}" class="img-fluid" alt="blog-img">
+                                       </a>
+                                       <div class="fav-item">
+                                           <span class="Featured-text">Featured</span>
+                                           <a href="javascript:void(0)" class="fav-icon">
+                                               <i class="feather-heart"></i>
+                                           </a>										
+                                       </div>	
+                                   </div>
+                                   <div class="bloglist-content">
+                                       <div class="card-body">
+                                           <div class="blogfeaturelink">
+                                               <div class="grid-author">
+                                                   <img  src="{% static 'assets/img/profiles/avatar-02.jpg' %}" alt="author">
+                                               </div>											    	
+                                               <div class="blog-features">
+                                                  <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i> Education</span></a>
+                                               </div>																	  
+                                               <div class="blog-author text-end"> 
+                                                   <span> <i class="feather-eye"></i>4000  </span>
+                                               </div>
+                                           </div> 
+                                           <h6><a href="service-details.html">2017 Gulfsteam Ameri-lite</a></h6>																	 
+                                           <div class="blog-location-details">
+                                               <div class="location-info">
+                                                  <i class="feather-map-pin"></i> Los Angeles
+                                               </div>
+                                               <div class="location-info">
+                                                   <i class="fa-solid fa-calendar-days"></i> 06 Oct, 2022
+                                               </div>
+                                           </div>
+                                           <div class="amount-details">
+                                               <div class="amount">
+                                                   <span class="validrate">$350</span>
+                                                   <span>$450</span>
+                                               </div>
+                                               <div class="ratings">
+                                                   <span>4.7</span> (50)
+                                               </div>
+                                           </div>	
+                                       </div>	
+                                   </div>			 
+                               </div> 
+                           </div>
+                           <div class="card aos" data-aos="fade-up">
+                               <div class="blog-widget">
+                                   <div class="blog-img">
+                                       <a href="service-details.html">
+                                           <img src="{% static 'assets/img/featured/feature-5.jpg' %}" class="img-fluid" alt="blog-img">
+                                       </a>
+                                       <div class="fav-item">
+                                           <span class="Featured-text">Featured</span>
+                                           <a href="javascript:void(0)" class="fav-icon">
+                                               <i class="feather-heart"></i>
+                                           </a>										
+                                       </div>	
+                                   </div>
+                                   <div class="bloglist-content">
+                                       <div class="card-body">
+                                           <div class="blogfeaturelink">
+                                               <div class="grid-author">
+                                                           <img  src="{% static 'assets/img/profiles/avatar-06.jpg' %}" alt="author">
+                                               </div>											   
+                                               <div class="blog-features">
+                                                  <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i> Construction</span></a>
+                                               </div>																	  
+                                               <div class="blog-author text-end"> 
+                                                   <span><i class="feather-eye"></i> 4000  </span>
+                                               </div>
+                                           </div> 
+                                           <h6><a href="service-details.html">Villa 457 sq.m. In Benidorm Fully</a></h6>																	 
+                                           <div class="blog-location-details">
+                                               <div class="location-info">
+                                                  <i class="feather-map-pin"></i> Los Angeles
+                                               </div>
+                                               <div class="location-info">
+                                                   <i class="fa-solid fa-calendar-days"></i> 11 Oct, 2022
+                                               </div>
+                                           </div>
+                                           <div class="amount-details">
+                                               <div class="amount">
+                                                   <span class="validrate">$650</span>
+                                                   <span>$600</span>
+                                               </div>
+                                               <div class="ratings">
+                                                   <span>4.5</span> (50)
+                                               </div>												
+                                           </div>	
+                                       </div>	
+                                   </div>			 
+                               </div> 
+                           </div>										
+                       </div>							
+                   </div>
+               </div>
+           </div>
+       </section>		
+       <!-- /Featured ADS Section -->
+       
+       <!-- Popular Location Section -->
+       <section class="popular-locations">	
+           <div class="popular-circleimg">
+                <img class="img-fluid" src="{% static 'assets/img/popular-img.png' %}" alt="Popular-sections">
+           </div>
+           <div class="container">		
+                <div class="section-heading">
+                   <h2>Popular <span>Loc</span>ations</h2>
+                   <p>Start by selecting your favuorite location and explore the goods</p>
+               </div>
+               <div class="location-details d-flex">	
+                   <div class="row">				
+                    <div class="location-info col-lg-4 col-md-6">
+                       <div class="location-info-details d-flex align-items-center">
+                         <div class="location-img">
+                            <a href="listing-grid-sidebar.html"><img class="img-fluid" src="{% static 'assets/img/locations/usa.jpg' %}" alt="locations"></a>
+                         </div>
+                         <div class="location-content">
+                             <a href="listing-grid-sidebar.html">USA</a>
+                             <p>20+ Ads Posted</p>
+                             <a href="listing-grid-sidebar.html" class="view-detailsbtn">View Details</a>
+                         </div>
+                       </div>
+                    </div>	
+                    <div class="location-info col-lg-4 col-md-6">
+                       <div class="location-info-details d-flex align-items-center">
+                         <div class="location-img">
+                            <a href="listing-grid-sidebar.html"><img class="img-fluid" src="{% static 'assets/img/locations/canada.jpg' %}" alt="locations"></a>
+                         </div>
+                         <div class="location-content">
+                             <a href="listing-grid-sidebar.html">Canada</a>
+                             <p>20+ Ads Posted</p>
+                             <a href="listing-grid-sidebar.html" class="view-detailsbtn">View Details</a>
+                         </div>
+                       </div>
+                    </div>	
+                    <div class="location-info col-lg-4 col-md-6">
+                       <div class="location-info-details d-flex align-items-center">
+                         <div class="location-img">
+                            <a href="listing-grid-sidebar.html"><img class="img-fluid" src="{% static 'assets/img/locations/china.jpg' %}" alt="locations"></a>
+                         </div>
+                         <div class="location-content">
+                             <a href="listing-grid-sidebar.html">China</a>
+                             <p>20+ Ads Posted</p>
+                             <a href="listing-grid-sidebar.html" class="view-detailsbtn">View Details</a>
+                         </div>
+                       </div>
+                    </div>				
+                    <div class="location-info col-lg-4 col-md-6">
+                       <div class="location-info-details d-flex align-items-center">
+                         <div class="location-img">
+                            <a href="listing-grid-sidebar.html"><img  class="img-fluid" src="{% static 'assets/img/locations/uk.jpg' %}" alt="locations"></a>
+                         </div>
+                         <div class="location-content">
+                             <a href="listing-grid-sidebar.html">United Kingdom</a>
+                             <p>20+ Ads Posted</p>
+                             <a href="listing-grid-sidebar.html" class="view-detailsbtn">View Details</a>
+                         </div>
+                        </div>
+                    </div>				   
+                    <div class="location-info col-lg-4 col-md-6">
+                       <div class="location-info-details d-flex align-items-center">
+                         <div class="location-img">
+                            <a href="listing-grid-sidebar.html"><img  class="img-fluid" src="{% static 'assets/img/locations/australia.jpg' %}" alt="locations"></a>
+                         </div>
+                         <div class="location-content">
+                             <a href="listing-grid-sidebar.html">Australia</a>
+                             <p>20+ Ads Posted</p>
+                             <a href="listing-grid-sidebar.html" class="view-detailsbtn">View Details</a>
+                         </div>
+                       </div>
+                    </div>
+                    <div class="location-info col-lg-4 col-md-6">
+                       <div class="location-info-details d-flex align-items-center">
+                         <div class="location-img">
+                            <a href="listing-grid-sidebar.html"><img class="img-fluid" src="{% static 'assets/img/locations/france.jpg' %}" alt="locations"></a>
+                         </div>
+                         <div class="location-content">
+                           <a href="listing-grid-sidebar.html">France</a>
+                           <p>20+ Ads Posted</p>
+                           <a href="listing-grid-sidebar.html" class="view-detailsbtn">View Details</a>
+                         </div>
+                       </div>							 
+                    </div>				 
+                   </div>				 
+               </div>
+                <div class="align-items-center"><a href="listing-grid-sidebar.html" class="browse-btn">Browse Ads</a></div>
+           </div>
+       </section>		
+       <!-- /Popular Locations Section -->
+       
+       <!-- Latest Ads Section -->
+        <section class="latestad-section grid-view featured-slider">	
+               <div class="container">		
+                       <div class="section-heading">
+                               <div class="row align-items-center">
+                                   <div class="col-md-6 aos aos-init aos-animate" data-aos="fade-up">
+                                           <h2>Lat<span class="title-right">est</span> Ads</h2>
+                                           <p>checkout these latest cool ads from our members</p>
+                                   </div>
+                                   <div class="col-md-6 text-md-end aos aos-init aos-animate" data-aos="fade-up">
+                                       <a href="service-details.html" class="btn  btn-view">View All</a>
+                                   </div>		
+                               </div>
+                       </div>
+                       <div class="lateestads-content">
+                           <div class="row">
+                               <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+                                   <div class="card aos flex-fill" data-aos="fade-up">
+                                       <div class="blog-widget">
+                                           <div class="blog-img">
+                                               <a href="service-details.html">
+                                                   <img src="{% static 'assets/img/featured/feature-9.jpg' %}" class="img-fluid" alt="blog-img">
+                                               </a>
+                                               <div class="fav-item">
+                                                   <span class="Featured-text">Featured</span>
+                                                   <a href="javascript:void(0)" class="fav-icon">
+                                                       <i class="feather-heart"></i>
+                                                   </a>										
+                                               </div>	
+                                           </div>
+                                           <div class="bloglist-content">
+                                               <div class="card-body">
+                                                   <div class="blogfeaturelink">
+                                                       <div class="grid-author">
+                                                            <img  src="{% static 'assets/img/profiles/avatar-02.jpg' %}" alt="author">
+                                                       </div>														
+                                                       <div class="blog-features">
+                                                          <a href="javascript:void(0)"><span>  <i class="fa-regular fa-circle-stop"></i> Education</span></a>
+                                                       </div>																	  
+                                                       <div class="blog-author text-end"> 
+                                                           <span>  <i class="feather-eye"></i> 4000  </span>
+                                                       </div>
+                                                   </div> 
+                                                   <h6><a href="service-details.html">2017 Gulfsteam Ameri-lite</a></h6>																	 
+                                                   <div class="blog-location-details">
+                                                       <div class="location-info">
+                                                          <i class="feather-map-pin"></i> Los Angeles
+                                                       </div>
+                                                       <div class="location-info">
+                                                           <i class="fa-solid fa-calendar-days"></i> 06 Oct, 2022
+                                                       </div>
+                                                   </div>
+                                                   <div class="amount-details">
+                                                       <div class="amount">
+                                                           <span class="validrate">$350</span>
+                                                           <span>$450</span>
+                                                       </div>
+                                                       <div class="ratings">
+                                                           <span>4.7</span> (50)
+                                                       </div>														
+                                                   </div>	
+                                               </div>	
+                                           </div>			 
+                                       </div> 
+                                   </div>
+                               </div>
+                               <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+                                    <div class="card aos flex-fill" data-aos="fade-up">
+                                       <div class="blog-widget">
+                                           <div class="blog-img">
+                                               <a href="service-details.html">
+                                                   <img src="{% static 'assets/img/featured/feature-2.jpg' %}" class="img-fluid" alt="blog-img">
+                                               </a>
+                                               <div class="fav-item">
+                                                   <span class="Featured-text">Featured</span>
+                                                   <a href="javascript:void(0)" class="fav-icon">
+                                                       <i class="feather-heart"></i>
+                                                   </a>										
+                                               </div>	
+                                           </div>
+                                           <div class="bloglist-content">
+                                               <div class="card-body">
+                                                   <div class="blogfeaturelink">
+                                                       <div class="grid-author">
+                                                           <img  src="{% static 'assets/img/profiles/avatar-03.jpg' %}" alt="author">
+                                                       </div>														
+                                                       <div class="blog-features">
+                                                          <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i> Electronics</span></a>
+                                                       </div>																	  
+                                                       <div class="blog-author text-end"> 
+                                                           <span>  <i class="feather-eye"></i> 4000  </span>
+                                                       </div>
+                                                   </div> 
+                                                   <h6><a href="service-details.html">Fashion luxury Men date</a></h6>																	 
+                                                   <div class="blog-location-details">
+                                                       <div class="location-info">
+                                                          <i class="feather-map-pin"></i> Los Angeles
+                                                       </div>
+                                                       <div class="location-info">
+                                                           <i class="fa-solid fa-calendar-days"></i> 08 Oct, 2022
+                                                       </div>
+                                                   </div>
+                                                   <div class="amount-details">
+                                                       <div class="amount">
+                                                           <span class="validrate">$250</span>
+                                                           <span>$350</span>
+                                                       </div>
+                                                       <div class="ratings">
+                                                           <span>4.6</span> (50)
+                                                       </div>														
+                                                   </div>	
+                                               </div>	
+                                           </div>			 
+                                       </div> 
+                                   </div>			
+                               </div>
+                               <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+                                   <div class="card aos flex-fill" data-aos="fade-up">
+                                       <div class="blog-widget">
+                                           <div class="blog-img">
+                                               <a href="service-details.html">
+                                                   <img src="{% static 'assets/img/featured/feature-3.jpg' %}" class="img-fluid" alt="blog-img">
+                                               </a>
+                                               <div class="fav-item">
+                                                   <span class="Featured-text">Featured</span>
+                                                   <a href="javascript:void(0)" class="fav-icon">
+                                                       <i class="feather-heart"></i>
+                                                   </a>										
+                                               </div>	
+                                           </div>
+                                           <div class="bloglist-content">
+                                               <div class="card-body">
+                                                   <div class="blogfeaturelink">
+                                                       <div class="grid-author">
+                                                           <img  src="{% static 'assets/img/profiles/avatar-04.jpg' %}" alt="author">
+                                                       </div>														
+                                                       <div class="blog-features">
+                                                          <a href="javascript:void(0)"><span>  <i class="fa-regular fa-circle-stop"></i> Electronics</span></a>
+                                                       </div>																	  
+                                                       <div class="blog-author text-end"> 
+                                                           <span>  <i class="feather-eye"></i> 4000  </span>
+                                                       </div>
+                                                   </div> 
+                                                   <h6><a href="service-details.html">Apple Iphone 6 16GB 4G LTE</a></h6>																	 
+                                                   <div class="blog-location-details">
+                                                       <div class="location-info">
+                                                          <i class="feather-map-pin"></i> Los Angeles
+                                                       </div>
+                                                       <div class="location-info">
+                                                           <i class="fa-solid fa-calendar-days"></i> 09 Oct, 2022
+                                                       </div>
+                                                   </div>
+                                                   <div class="amount-details">
+                                                       <div class="amount">
+                                                           <span class="validrate">$550</span>
+                                                           <span>$400</span>
+                                                       </div>
+                                                       <div class="ratings">
+                                                           <span>4.7</span> (50)
+                                                       </div>														
+                                                   </div>	
+                                               </div>	
+                                           </div>			 
+                                       </div> 
+                                   </div>			
+                               </div>
+                               <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+                                   <div class="card aos flex-fill" data-aos="fade-up">
+                                       <div class="blog-widget">
+                                           <div class="blog-img">
+                                               <a href="service-details.html">
+                                                   <img src="{% static 'assets/img/featured/feature-4.jpg' %}" class="img-fluid" alt="blog-img">
+                                               </a>
+                                               <div class="fav-item">
+                                                   <span class="Featured-text">Featured</span>
+                                                   <a href="javascript:void(0)" class="fav-icon">
+                                                       <i class="feather-heart"></i>
+                                                   </a>										
+                                               </div>	
+                                           </div>
+                                           <div class="bloglist-content">
+                                               <div class="card-body">
+                                                   <div class="blogfeaturelink">
+                                                       <div class="grid-author">
+                                                           <img  src="{% static 'assets/img/profiles/avatar-05.jpg' %}" alt="author">
+                                                       </div>
+                                                       <div class="blog-features">
+                                                          <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i>  Gadgets</span></a>
+                                                       </div>																	  
+                                                       <div class="blog-author text-end"> 
+                                                           <span><i class="feather-eye"></i> 4000  </span>
+                                                       </div>
+                                                   </div> 
+                                                   <h6><a href="service-details.html">Customized Apple Imac </a></h6>																	 
+                                                   <div class="blog-location-details">
+                                                       <div class="location-info">
+                                                          <i class="feather-map-pin"></i> Los Angeles
+                                                       </div>
+                                                       <div class="location-info">
+                                                           <i class="fa-solid fa-calendar-days"></i> 10 Oct, 2022
+                                                       </div>
+                                                   </div>
+                                                   <div class="amount-details">
+                                                       <div class="amount">
+                                                           <span class="validrate">$450</span>
+                                                           <span>$300</span>
+                                                       </div>
+                                                       <div class="ratings">
+                                                           <span>4.5</span> (50)
+                                                       </div>														
+                                                   </div>	
+                                               </div>	
+                                           </div>			 
+                                       </div> 
+                                   </div>	
+                               </div>
+                               <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+                                   <div class="card aos flex-fill" data-aos="fade-up">
+                                       <div class="blog-widget">
+                                           <div class="blog-img">
+                                               <a href="service-details.html">
+                                                   <img src="{% static 'assets/img/featured/feature-5.jpg' %}" class="img-fluid" alt="blog-img">
+                                               </a>
+                                               <div class="fav-item">
+                                                   <span class="Featured-text">Featured</span>
+                                                   <a href="javascript:void(0)" class="fav-icon">
+                                                       <i class="feather-heart"></i>
+                                                   </a>										
+                                               </div>	
+                                           </div>
+                                           <div class="bloglist-content">
+                                               <div class="card-body">
+                                                   <div class="blogfeaturelink">
+                                                       <div class="grid-author">
+                                                           <img  src="{% static 'assets/img/profiles/avatar-06.jpg' %}" alt="author">
+                                                       </div>															
+                                                       <div class="blog-features">
+                                                          <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i>  Construction</span></a>
+                                                       </div>																	  
+                                                       <div class="blog-author text-end"> 
+                                                           <span>  <i class="feather-eye"></i>4000  </span>
+                                                       </div>
+                                                   </div> 
+                                                   <h6><a href="service-details.html">Villa 457 sq.m. In Benidorm Fully</a></h6>																	 
+                                                   <div class="blog-location-details">
+                                                       <div class="location-info">
+                                                          <i class="feather-map-pin"></i> Los Angeles
+                                                       </div>
+                                                       <div class="location-info">
+                                                           <i class="fa-solid fa-calendar-days"></i> 11 Oct, 2022
+                                                       </div>
+                                                   </div>
+                                                   <div class="amount-details">
+                                                       <div class="amount">
+                                                           <span class="validrate">$650</span>
+                                                           <span>$600</span>
+                                                       </div>
+                                                       <div class="ratings">
+                                                           <span>4.5</span> (50)
+                                                       </div>														
+                                                   </div>	
+                                               </div>	
+                                           </div>			 
+                                       </div> 
+                                   </div>	
+                               </div>
+                               <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+                                   <div class="card aos flex-fill" data-aos="fade-up">
+                                       <div class="blog-widget">
+                                           <div class="blog-img">
+                                               <a href="service-details.html">
+                                                   <img src="{% static 'assets/img/featured/feature-6.jpg' %}" class="img-fluid" alt="blog-img">
+                                               </a>
+                                               <div class="fav-item">
+                                                   <span class="Featured-text">Featured</span>
+                                                   <a href="javascript:void(0)" class="fav-icon">
+                                                       <i class="feather-heart"></i>
+                                                   </a>										
+                                               </div>	
+                                           </div>
+                                           <div class="bloglist-content">
+                                               <div class="card-body">
+                                                   <div class="blogfeaturelink">
+                                                       <div class="grid-author">
+                                                           <img  src="{% static 'assets/img/profiles/avatar-03.jpg' %}" alt="author">
+                                                       </div>														
+                                                       <div class="blog-features">
+                                                          <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i> Jobs</span></a>
+                                                       </div>																	  
+                                                       <div class="blog-author text-end"> 
+                                                           <span> <i class="feather-eye"></i>4000  </span>
+                                                       </div>
+                                                   </div> 
+                                                   <h6><a href="service-details.html">CDL A OTR Compnay Driver Job-N</a></h6>																	 
+                                                   <div class="blog-location-details">
+                                                       <div class="location-info">
+                                                          <i class="feather-map-pin"></i> Los Angeles
+                                                       </div>
+                                                       <div class="location-info">
+                                                           <i class="fa-solid fa-calendar-days"></i> 12 Oct, 2022
+                                                       </div>
+                                                   </div>
+                                                   <div class="amount-details">
+                                                       <div class="amount">
+                                                           <span class="validrate">$550</span>
+                                                           <span>$450</span>
+                                                       </div>
+                                                       <div class="ratings">
+                                                           <span>4.7</span> (50)
+                                                       </div>														
+                                                   </div>	
+                                               </div>	
+                                           </div>			 
+                                       </div> 
+                                   </div>			
+                               </div>
+                               <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+                                   <div class="card aos flex-fill" data-aos="fade-up">
+                                       <div class="blog-widget">
+                                           <div class="blog-img">
+                                               <a href="service-details.html">
+                                                   <img src="{% static 'assets/img/featured/feature-7.jpg' %}" class="img-fluid" alt="blog-img">
+                                               </a>
+                                               <div class="fav-item">
+                                                   <span class="Featured-text">Featured</span>
+                                                   <a href="javascript:void(0)" class="fav-icon">
+                                                       <i class="feather-heart"></i>
+                                                   </a>										
+                                               </div>	
+                                           </div>
+                                           <div class="bloglist-content">
+                                               <div class="card-body">
+                                                   <div class="blogfeaturelink">
+                                                       <div class="grid-author">
+                                                           <img  src="{% static 'assets/img/profiles/avatar-06.jpg' %}" alt="author">
+                                                       </div>														
+                                                       <div class="blog-features">
+                                                          <a href="javascript:void(0)"><span><i class="fa-regular fa-circle-stop"></i> Electronics</span></a>
+                                                       </div>																	  
+                                                       <div class="blog-author text-end"> 
+                                                           <span><i class="feather-eye"></i> 4000  </span>
+                                                       </div>
+                                                   </div> 
+                                                   <h6><a href="service-details.html">HP Gaming 15.6 Touchscren 12G</a></h6>																	 
+                                                   <div class="blog-location-details">
+                                                       <div class="location-info">
+                                                          <i class="feather-map-pin"></i> Los Angeles
+                                                       </div>
+                                                       <div class="location-info">
+                                                           <i class="fa-solid fa-calendar-days"></i> 02 Oct, 2022
+                                                       </div>
+                                                   </div>
+                                                   <div class="amount-details">
+                                                       <div class="amount">
+                                                           <span class="validrate">$450</span>
+                                                           <span>$350</span>
+                                                       </div>
+                                                       <div class="ratings">
+                                                           <span>4.7</span> (50)
+                                                       </div>														
+                                                   </div>	
+                                               </div>	
+                                           </div>			 
+                                       </div> 
+                                   </div>					   
+                               </div>
+                               <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+                                   <div class="card aos flex-fill" data-aos="fade-up">
+                                       <div class="blog-widget">
+                                           <div class="blog-img">
+                                               <a href="service-details.html">
+                                                   <img src="{% static 'assets/img/featured/feature-8.jpg' %}" class="img-fluid" alt="blog-img">
+                                               </a>
+                                               <div class="fav-item">
+                                                   <span class="Featured-text">Featured</span>
+                                                   <a href="javascript:void(0)" class="fav-icon">
+                                                       <i class="feather-heart"></i>
+                                                   </a>										
+                                               </div>	
+                                           </div>
+                                           <div class="bloglist-content">
+                                               <div class="card-body">
+                                                   <div class="blogfeaturelink">
+                                                       <div class="grid-author">
+                                                           <img  src="{% static 'assets/img/profiles/avatar-07.jpg' %}" alt="author">
+                                                       </div>														
+                                                       <div class="blog-features">
+                                                          <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i> Vehicle</span></a>
+                                                       </div>																	  
+                                                       <div class="blog-author text-end"> 
+                                                           <span> <i class="feather-eye"></i>4000  </span>
+                                                       </div>
+                                                   </div> 
+                                                   <h6><a href="service-details.html">2012 AudiR8  GT Spider Convrtibile</a></h6>																	 
+                                                   <div class="blog-location-details">
+                                                       <div class="location-info">
+                                                          <i class="feather-map-pin"></i> Los Angeles
+                                                       </div>
+                                                       <div class="location-info">
+                                                           <i class="fa-solid fa-calendar-days"></i> 02 Oct, 2022
+                                                       </div>
+                                                   </div>
+                                                   <div class="amount-details">
+                                                       <div class="amount">
+                                                           <span class="validrate">$450</span>
+                                                           <span>$350</span>
+                                                       </div>
+                                                       <div class="ratings">
+                                                           <span>4.7</span> (50)
+                                                       </div>														
+                                                   </div>	
+                                               </div>	
+                                           </div>			 
+                                       </div> 
+                                   </div>			
+                               </div>
+                           </div>						
+                       </div>						
+               </div>
+       </section>	
+       <!-- /Latest Ads Section -->
+       
+       <!-- CTA Section -->
+       <section class="cta-section">
+           <div class="container">
+               <div class="row align-items-center">
+                    <div class="col-lg-7">
+                         <div class="cta-content">
+                             <h3>Earn Cash by <span>Selling</span> <br>
+                             or Find Anything you desire							     
+                             </h3>
+                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humo or randomised words which don't look even slightlys</p>
+                             <div class="cta-btn">
+                                <a href="add-listing.html" class="btn-primary postad-btn">Post Your Ads</a>
+                                <a href="listing-grid-sidebar.html" class="browse-btn">Browse Ads</a>							  
+                             </div>
+                         </div>
+                    </div>
+                    <div class="col-lg-5">
+                          <div class="cta-img">
+                               <img src="assets/img/cta-img.png" class="img-fluid" alt="CTA">
+                          </div>
+                    </div>
+               </div>
+           </div>
+       </section>		
+       <!-- /CTA Section -->
+       
+       
+       <!-- Partners Section -->
+       <div class="partners-section">
+           <div class="container">
+                <p class="partners-heading">Over 5,26,000+ Sponsers being contact with us</p>	
+                <ul class="owl-carousel partnerslist d-flex">
+                   <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-1.svg" alt="partners"></a></li>
+                   <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-2.svg" alt="partners"></a></li>
+                   <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-3.svg" alt="partners"></a></li>
+                   <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-4.svg" alt="partners"></a></li>
+                   <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-5.svg" alt="partners"></a></li>
+                   <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-6.svg" alt="partners"></a></li>
+                   <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-1.svg" alt="partners"></a></li>
+                   <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-2.svg" alt="partners"></a></li>
+                   <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-3.svg" alt="partners"></a></li>
+                   <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-4.svg" alt="partners"></a></li>
+                   <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-5.svg" alt="partners"></a></li>
+                   <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-6.svg" alt="partners"></a></li>
+                </ul>
+           </div>
+       </div>		
+       <!-- /Partners  Section -->
+       
+       
+{% endblock body %}
