@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def book_listing(request, *args, **kwargs):
     return render(request, 'books_listing.html')
+
+def book_detail(request, *args, **kwargs):
+    return render(request, 'book-detail.html')
