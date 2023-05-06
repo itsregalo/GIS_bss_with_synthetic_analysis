@@ -1,13 +1,10 @@
 from django.contrib import admin
 from .models import *
+from django.contrib.gis.admin import OSMGeoAdmin
 
-
-class BookOwnerAdmin(admin.ModelAdmin):
-    list_display = ['user', 'address', 'city']
-    search_fields = ['user__username', 'address', 'city']
-    list_filter = ['city']
-
-admin.site.register(BookOwner, BookOwnerAdmin)
+@admin.register(BookOwner)
+class BookOwnerAdmin(OSMGeoAdmin):
+    list_display = ['location', 'address', 'city']
 
 class BookCategoryAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug']
