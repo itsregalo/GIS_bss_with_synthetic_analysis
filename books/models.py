@@ -1,17 +1,31 @@
 from django.db import models
 from accounts.models import User
 import uuid
-from django.contrib.gis.db import models
+from django.contrib.gis.db import models as gis_models
+from django.utils.text import slugify
+
+class BookOwner(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    location = gis_models.PointField(null=True, blank=True)
+    address = models.CharField(max_length=200, null=True, blank=True)
+    city = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        db_table = 'book_owner'
+
+    def __str__(self):
+        return self.user.username
 
 class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
     description = models.TextField()
     cover_image = models.ImageField(upload_to='book_covers/')
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    location = models.PointField()
+    owner = models.ForeignKey(BookOwner, on_delete=models.CASCADE)
+    location = gis_models.PointField(null=True, blank=True)
     slug = models.SlugField(max_length=200, unique=True)
     uuid = models.UUIDField(unique=True, editable=False)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ['title']
@@ -23,6 +37,13 @@ class Book(models.Model):
     def save(self, *args, **kwargs):
         if not self.uuid:
             self.uuid = uuid.uuid4()
+        if not self.slug:
+            self.slug = slugify(self.title) + '-' + str(self.timestamp.year) + '-' + str(self.timestamp.month) + '-' + str(self.timestamp.day)
+        if not self.location:
+            try:
+                self.location = self.owner.location
+            except:
+                pass
 
         return super(Book, self).save(*args, **kwargs)
     
