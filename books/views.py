@@ -8,7 +8,7 @@ radius = 20
 # Create your views here.
 
 def book_listing(request, *args, **kwargs):
-    nearby_books = Book.objects.all()
+    nearby_books = Book.objects.annotate(distance=Distance('location', request.user.bookowner.location)).order_by('distance')[0:10]
     context = {
         'nearby_books': nearby_books
     }
