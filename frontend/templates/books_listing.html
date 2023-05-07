@@ -8,37 +8,37 @@
 
 
 		<!-- Main Content Section -->
-		<div class="list-content listmap-grid">
-			<div class="container-fluid">
-			    <div class="row">
-			  	   <div class="col-lg-6 listingmaplist-content">
-			   	      <div class="listmapgrid-content listmaplist-content">
+		<div class="list-content listmap-grid ">
+		    <div class="container-fluid">
+		        <div class="row">
+		     	    <div class="col-lg-6 listingmappage-content">
+		     	        <div class="listmapgrid-content">
                             <div class="row sorting-div">
-			     				<div class="col-lg-4 col-md-4 col-sm-4 align-items-center d-flex">
+								<div class="col-lg-4 col-md-4 col-sm-4 align-items-center d-flex">
 									<div class="count-search">
 										<p>Showing <span>1-8</span> of 10 Results</p>
 									</div>
 								</div>
 								<div class="col-lg-8 col-md-8 col-sm-8  align-items-center">
-						            <div class="sortbyset">
+							        <div class="sortbyset">
 							           <span class="sortbytitle">Sort by</span>
-				                       <div class="sorting-select">
-					                        <select class="form-control select">
-												<option>Default</option>
-												<option>Price Low to High</option>
-												<option>Price High to Low</option>
-											</select>
-                                 		</div>
+							           <div class="sorting-select">
+					                     <select class="form-control select">
+											<option>Default</option>
+										    <option>Price Low to High</option>
+											<option>Price High to Low</option>
+										</select>
+                                 	   </div>
 									</div>
 									<div class="grid-listview">
 										<ul>
 											<li>
-												<a href="#" class="active">
+												<a href="listingmap-list.html">
 													<i class="feather-list"></i>
 												</a>
 											</li>
 											<li>
-												<a href="listingmap-grid.html">
+												<a href="listingmap-grid.html" class="active">
 													<i class="feather-grid"></i>
 												</a>
 											</li>
@@ -46,452 +46,78 @@
 									</div>
 								</div>
 							</div>
-							<div class="blog-listview">
-							    <div class="card">
-							        <div class="blog-widget">
-							            <div class="blog-img">
-										    <a href="service-details.html">
-												<img src="{% static 'assets/img/blog/bloglistimg-1.jpg' %}" class="img-fluid" alt="blog-img">
-											</a>
-                                            <div class="fav-item">
-												<span class="Featured-text">Featured</span>
-												<a href="javascript:void(0)" class="fav-icon">
-													<i class="feather-heart"></i>
-												</a>										
-									        </div>															    
-										</div>
-										<div class="bloglist-content">
-										   <div class="card-body">
-											    <div class="blogfeaturelink">
-												    <div class="blog-features">
-											          <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i> Construction</span></a>
-                                                    </div>																	  
-												    <div class="blog-author"> 
-													    <div class="blog-author-img">
-														   <img src="{% static 'assets/img/profiles/avatar-01.jpg' %}" alt="author">
-														 </div>													  
-												        <a href="javascript:void(0)">John Doe</a>
-												    </div>
-												</div> 
-                                                <h6><a href="service-details.html">Villa 457 sq.m. In Benidorm Fully Qquipped House</a></h6>																	 
-												<div class="blog-location-details">
-												    <div class="location-info">
-												       <i class="feather-map-pin"></i> Los Angeles
-													</div>
-													<div class="location-info">
-													    <i class="feather-phone-call"></i> +44 6633 6526
-													</div>
-													<div class="location-info">
-													   <i class="feather-eye"></i> 4000
-													</div>
-												</div>
-												<p class="ratings">
-													<span>4.0</span> ( 50 Reviews )
-												</p>
-												<div class="amount-details">
-												    <div class="amount">
-												        <span class="validrate">$350</span>
-													    <span>$450</span>
-													</div>
-												    <a href="service-details.html">View details</a>
+							<div class="grid-view">
+								<div class="row ">
+								    
+									{% for book in nearby_books %}
+									<div class="col-lg-3 col-md-4">
+								        <div class="card">
+								            <div class="blog-widget">
+										     <div class="blog-img">
+											    <a href="service-details.html">
+									    			<img src="{{book.cover_image_thumbnail.url}}" class="img-fluid" alt="blog-img">
+												</a>
+                                                <div class="fav-item">
+													<span class="Featured-text">{{book.category.name}}</span>
+											    	<a href="javascript:void(0)" class="fav-icon">
+														<i class="feather-heart"></i>
+													</a>										
 												</div>	
-											</div>	
-										</div>			 
-									</div> 
-								</div>
-								<div class="card">
-								   <div class="blog-widget">
-								        <div class="blog-img">
-									        <a href="service-details.html">
-											   <img src="{% static 'assets/img/blog/bloglistimg-2.jpg' %}" class="img-fluid" alt="blog-img">
-											</a>
-                                            <div class="fav-item">
-												<span class="Featured-text">Featured</span>
-												<a href="javascript:void(0)" class="fav-icon">
-    												<i class="feather-heart"></i>
-												</a>										
-    									    </div>															    
-										</div>
-										<div class="bloglist-content">
-										    <div class="card-body">
-											    <div class="blogfeaturelink">
-												    <div class="blog-features">
-												       <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i> Jobs</span></a>
-                                                    </div>																	  
-											        <div class="blog-author"> 
-													   <div class="blog-author-img">
-										       	          <img src="{% static 'assets/img/profiles/avatar-10.jpg' %}" alt="author">
-												        </div>
-													     <a href="javascript:void(0)">Orlando Diggs</a>
+                                             </div>
+											 <div class="bloglist-content">
+											    <div class="card-body"> 
+                                                    <h6><a href="service-details.html">{{ book.title}}</a></h6>																	 
+													<div class="blog-location-details">
+													   <div class="location-info">
+													     <i class="feather-map-pin"></i> Los Angeles
+													   </div>
 													</div>
-												</div> 
-                                                <h6><a href="service-details.html">CDL A OTR Compnay Driver Job-N</a></h6>																	 
-												<div class="blog-location-details">
-												    <div class="location-info">
-												        <i class="feather-map-pin"></i> Los Angeles
-													</div>
-													<div class="location-info">
-													     <i class="feather-phone-call"></i> +44 6633 6526
-													</div>
-													<div class="location-info">
-													   <i class="feather-eye"></i> 4000
-													</div>
-                                                </div>
-												 <p class="ratings">
-													<span>4.0</span> ( 50 Reviews )
-												</p>
-												<div class="amount-details">
-												    <div class="amount">
-												       <span class="validrate">$350</span>
-													   <span>$450</span>
-													</div>
-													<a href="service-details.html">View details</a>
+													<div class="amount-details">
+													    <div class="amount">
+													      <span class="validrate">$350</span>
+													      <span>$450</span>
+													    </div>
+														<div class="ratings">
+															<span>4.7</span> (50)
+												        </div>														
+													</div>	
 												</div>	
-											</div>	
-										</div>			 
-									</div> 
-								</div>
-								<div class="card">
-								    <div class="blog-widget">
-								        <div class="blog-img">
-									        <a href="service-details.html">
-												<img src="{% static 'assets/img/blog/bloglistimg-3.jpg' %}" class="img-fluid" alt="blog-img">
-											</a>
-                                            <div class="fav-item">
-												<span class="Featured-text">Featured</span>
-										    	<a href="javascript:void(0)" class="fav-icon">
-									       		<i class="feather-heart"></i>
-												</a>										
-											</div>															    
-										</div>
-										<div class="bloglist-content">
-										    <div class="card-body">
-											    <div class="blogfeaturelink">
-												   <div class="blog-features">
-											          <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i> Electronics</span></a>
-                                                   </div>																	  
-											       <div class="blog-author"> 
-												       <div class="blog-author-img">
-														   <img src="{% static 'assets/img/profiles/avatar-04.jpg' %}" alt="author">
-														 </div>
-													    <a href="javascript:void(0)">Kate Morrison</a>
-												   </div>
-												</div> 
-                                                <h6><a href="service-details.html">HP Gaming 15.6 Touchscreen 12G</a></h6>																	 
-												<div class="blog-location-details">
-												    <div class="location-info">
-												     <i class="feather-map-pin"></i> Los Angeles
-													</div>
-													<div class="location-info">
-													   <i class="feather-phone-call"></i> +44 6633 6526
-													</div>
-													<div class="location-info">
-													  <i class="feather-eye"></i> 4000
-													</div>
-												</div>
-												<p class="ratings">
-													<span>4.0</span> ( 50 Reviews )
-												</p>
-												<div class="amount-details">
-												    <div class="amount">
-												     <span class="validrate">$350</span>
-												     <span>$450</span>
-												    </div>
-												    <a href="service-details.html">View details</a>
-												</div>	
-											</div>	
-										</div>			 
-									</div> 
-								</div>
-								<div class="card">
-								    <div class="blog-widget">
-								     <div class="blog-img">
-									    <a href="service-details.html">
-											<img src="{% static 'assets/img/blog/bloglistimg-4.jpg' %}" class="img-fluid" alt="blog-img">
-										</a>
-                                        <div class="fav-item">
-											<span class="Featured-text">Featured</span>
-												<a href="javascript:void(0)" class="fav-icon">
-													<i class="feather-heart"></i>
-												</a>										
-								        </div>															    
-									</div>
-									<div class="bloglist-content">
-									    <div class="card-body">
-										   <div class="blogfeaturelink">
-										      <div class="blog-features">
-											     <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i> Vehicles</span></a>
-                                              </div>																	  
-											  <div class="blog-author"> 
-											       <div class="blog-author-img">
-										       	       <img src="{% static 'assets/img/profiles/avatar-06.jpg' %}" alt="author">
-												     </div>												  
-												  <a href="javascript:void(0)">Koray Okumus</a>
-										      </div>
-											</div> 
-                                            <h6><a href="service-details.html">2022 Audi R8 GT Spyder Convertible</a></h6>																	 
-											    <div class="blog-location-details">
-											      <div class="location-info">
-												    <i class="feather-map-pin"></i> Los Angeles
-												  </div>
-											      <div class="location-info">
-												    <i class="feather-phone-call"></i> +44 6633 6526
-												  </div>
-												  <div class="location-info">
-													   <i class="feather-eye"></i> 4000
-												  </div>
-						                        </div>
-												<p class="ratings">
-													<span>4.0</span> ( 50 Reviews )
-												</p>
-												<div class="amount-details">
-												    <div class="amount">
-												        <span class="validrate">$350</span>
-													    <span>$450</span>
-													</div>
-													<a href="service-details.html">View details</a>
-												</div>	
-											</div>	
-										</div>			 
-									</div> 
-								</div>
-								<div class="card">
-								    <div class="blog-widget">
-								        <div class="blog-img">
-										    <a href="service-details.html">
-												<img src="{% static 'assets/img/blog/bloglistimg-5.jpg' %}" class="img-fluid" alt="blog-img">
-											</a>
-                                            <div class="fav-item">
-												<span class="Featured-text">Featured</span>
-												<a href="javascript:void(0)" class="fav-icon">
-													<i class="feather-heart"></i>
-												</a>										
-									        </div>															    
-										</div>
-										<div class="bloglist-content">
-										    <div class="card-body">
-											    <div class="blogfeaturelink">
-												   <div class="blog-features">
-												       <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i> Vehicles</span></a>
-                                                    </div>																	  
-											        <div class="blog-author"> 
-													  <div class="blog-author-img">
-										       	       <img src="{% static 'assets/img/profiles/avatar-05.jpg' %}" alt="author">
-												     </div>													 
-													  <a href="javascript:void(0)">Ava Wright</a>
-													</div>
-												</div> 
-                                                <h6><a href="service-details.html">2017 Gulfsteam Ameri-lite</a></h6>																	 
-												<div class="blog-location-details">
-												    <div class="location-info">
-													    <i class="feather-map-pin"></i> Los Angeles
-												    </div>
-												    <div class="location-info">
-													    <i class="feather-phone-call"></i> +44 6633 6526
-												    </div>
-												    <div class="location-info">
-													   <i class="feather-eye"></i> 4000
-													</div>
-												</div>
-												<p class="ratings">
-													<span>4.0</span> ( 50 Reviews )
-												</p>
-												<div class="amount-details">
-												    <div class="amount">
-												     <span class="validrate">$350</span>
-												     <span>$450</span>
-												    </div>
-												    <a href="service-details.html">View details</a>
-												</div>	
-											</div>	
-										</div>			 
-									</div> 
-								</div>
-								<div class="card">
-								    <div class="blog-widget">
-								        <div class="blog-img">
-										    <a href="service-details.html">
-											<img src="{% static 'assets/img/blog/bloglistimg-6.jpg' %}" class="img-fluid" alt="blog-img">
-											</a>
-                                            <div class="fav-item">
-												<span class="Featured-text">Featured</span>
-												<a href="javascript:void(0)" class="fav-icon">
-													<i class="feather-heart"></i>
-												</a>										
-									        </div>															    
-										</div>
-										<div class="bloglist-content">
-										    <div class="card-body">
-											    <div class="blogfeaturelink">
-												   <div class="blog-features">
-												       <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i> Electronics</span></a>
-                                                    </div>																	  
-											        <div class="blog-author"> 
-													    <div class="blog-author-img">
-														   <img src="{% static 'assets/img/profiles/avatar-08.jpg' %}" alt="author">
-														 </div>
-													     <a href="javascript:void(0)">Eve Leroy</a>
-													</div>
-												</div> 
-                                                <h6><a href="service-details.html">Fashion Luxury Men Date</a></h6>																	 
-												<div class="blog-location-details">
-												    <div class="location-info">
-												       <i class="feather-map-pin"></i> Los Angeles
-													</div>
-													<div class="location-info">
-													    <i class="feather-phone-call"></i> +44 6633 6526
-													</div>
-													<div class="location-info">
-													    <i class="feather-eye"></i> 4000
-													</div>
-												</div>
-												<p class="ratings">
-													<span>4.0</span> ( 50 Reviews )
-												</p>
-												<div class="amount-details">
-												    <div class="amount">
-												     <span class="validrate">$350</span>
-												     <span>$450</span>
-												    </div>
-							        				 <a href="service-details.html">View details</a>
-												</div>	
-											</div>	
-										</div>			 
-									</div> 
-								</div>
-								<div class="card">
-								    <div class="blog-widget">
-								        <div class="blog-img">
-										    <a href="service-details.html">
-											<img src="{% static 'assets/img/blog/bloglistimg-7.jpg' %}" class="img-fluid" alt="blog-img">
-											</a>
-                                           <div class="fav-item">
-												<span class="Featured-text">Featured</span>
-									     		<a href="javascript:void(0)" class="fav-icon">
-													<i class="feather-heart"></i>
-												</a>										
-										    </div>															    
-										</div>
-										<div class="bloglist-content">
-										    <div class="card-body">
-											    <div class="blogfeaturelink">
-												    <div class="blog-features">
-											           <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i> Electronics</span></a>
-                                                    </div>																	  
-													<div class="blog-author"> 
-													   <div class="blog-author-img">
-														   <img src="{% static 'assets/img/profiles/avatar-09.jpg' %}" alt="author">
-														 </div>
-													    <a href="javascript:void(0)">Zahir Mays</a>
-													</div>
-												</div> 
-                                                <h6><a href="service-details.html">Apple iphone6 16GB 4G LTE</a></h6>																	 
-												<div class="blog-location-details">
-												    <div class="location-info">
-													   <i class="feather-map-pin"></i> Los Angeles
-												    </div>
-													<div class="location-info">
-													    <i class="feather-phone-call"></i> +44 6633 6526
-													</div>
-													<div class="location-info">
-													   <i class="feather-eye"></i> 4000
-													</div>
-												</div>
-												<p class="ratings">
-													<span>4.0</span> ( 50 Reviews )
-												</p>
-												<div class="amount-details">
-												    <div class="amount">
-												     <span class="validrate">$350</span>
-												     <span>$450</span>
-												    </div>
-													<a href="service-details.html">View details</a>
-												</div>	
-											</div>	
-										</div>			 
-									</div> 
-								</div>
-								<div class="card">
-								    <div class="blog-widget">
-								        <div class="blog-img">
-									      <a href="service-details.html">
-											<img src="{% static 'assets/img/blog/bloglistimg-8.jpg' %}" class="img-fluid" alt="blog-img">
-										  </a>
-                                          <div class="fav-item">
-												<span class="Featured-text">Featured</span>
-												<a href="javascript:void(0)" class="fav-icon">
-													<i class="feather-heart"></i>
-												</a>										
-										  </div>															    
-						                </div>
-										<div class="bloglist-content">
-										    <div class="card-body">
-										 	    <div class="blogfeaturelink">
-												    <div class="blog-features">
-											          <a href="javascript:void(0)"><span> <i class="fa-regular fa-circle-stop"></i> Electronics</span></a>
-                                                    </div>																	  
-												    <div class="blog-author"> 
-													   <div class="blog-author-img">
-										       	         <img src="{% static 'assets/img/profiles/avatar-10.jpg' %}" alt="author">
-												       </div>
-													   <a href="javascript:void(0)">Zahir Mays</a>
-													</div>
-												</div> 
-                                                <h6><a href="service-details.html">Customized Apple iMac 21.5" All-In-</a></h6>																	 
-												<div class="blog-location-details">
-												    <div class="location-info">
-													    <i class="feather-map-pin"></i> Los Angeles
-												  </div>
-												  <div class="location-info">
-												    <i class="feather-phone-call"></i> +44 6633 6526
-												  </div>
-												  <div class="location-info">
-												   <i class="feather-eye"></i> 4000
-												  </div>
-												</div>
-												<p class="ratings">
-													<span>4.0</span> ( 50 Reviews )
-												</p>
-												<div class="amount-details">
-												    <div class="amount">
-												     <span class="validrate">$350</span>
-												     <span>$450</span>
-												    </div>
-													<a href="service-details.html">View details</a>
-												</div>	
-											</div>	
-										</div>			 
-									</div> 
-								</div>
+											  </div>			 
+									        </div> 
+									    </div>
+								    </div>
+									{% endfor %}
+										
+							    </div>
 							</div>
 							
 							<!--Pagination--> 
 							<div class="blog-pagination">
 								<nav>
-									<ul class="pagination">
-										<li class="page-item previtem">
+							    	<ul class="pagination">
+								    	<li class="page-item previtem">
 											<a class="page-link" href="#"><i class="fas fa-regular fa-arrow-left"></i> Prev</a>
 										</li>
-										<li class="justify-content-center pagination-center"> 
+									    <li class="justify-content-center pagination-center"> 
 											<div class="pagelink">
-										    <ul>
-												<li class="page-item">
-													<a class="page-link" href="#">1</a>
-												</li>
-												<li class="page-item active">
-													<a class="page-link" href="#">2 <span class="visually-hidden">(current)</span></a>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">3</a>
-											   </li>
-												<li class="page-item">
-													<a class="page-link" href="#">...</a>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">14</a>
-												</li>
-										    </ul>
-										    </div>													
+									          <ul>
+													<li class="page-item">
+														<a class="page-link" href="#">1</a>
+													</li>
+													<li class="page-item active">
+														<a class="page-link" href="#">2 <span class="visually-hidden">(current)</span></a>
+													</li>
+													<li class="page-item">
+														<a class="page-link" href="#">3</a>
+												   </li>
+													<li class="page-item">
+														<a class="page-link" href="#">...</a>
+													</li>
+													<li class="page-item">
+														<a class="page-link" href="#">14</a>
+													</li>
+											   </ul>
+											</div>													
 										</li>													
 										<li class="page-item nextlink">
 											<a class="page-link" href="#">Next <i class="fas fa-regular fa-arrow-right"></i></a>
@@ -499,18 +125,18 @@
 									</ul>
 								</nav>
 							</div>
-							<!--/Pagination-->
+						    <!--/Pagination-->
 											  
                         </div>
-					</div>							   
-					<div class="col-lg-6 map-right">
-                        <div id="map" class="map-listing"></div>									 					    
-						<div class="showfilter">
-						        <button class="btn filterbtn">
+				   </div>
+				   <div class="col-lg-6 map-right">
+				        <div id="map" class="map-listing"></div>
+                        <div class="showfilter">
+						        <button class="btn filterbtn">								   
 								    <span class="showfilter-btn"><img src="assets/img/details-icon.svg" alt="details-icon"> Show Filters</span>
-									<span class="hidefilter-btn"><i class="feather-eye-off"></i> Hide Filters</span>									
+									<span class="hidefilter-btn"><i class="feather-eye-off"></i> Hide Filters</span>
 								</button>
-					                                            <div class="listings-sidebar">
+                                <div class="listings-sidebar">
 									<div class="card">
 										<h4><img  src="assets/img/details-icon.svg" alt="details-icon"> Filter</h4>
 										<form>
@@ -530,7 +156,7 @@
 												  <input type="text" class="form-control" placeholder="Where to look?">
 												  <i class="feather-map-pin"></i>
 												</div>
-											</div> 
+											</div>
 											<div class="filter-content form-group region">
 												<select class="form-control select region-select">
 													<option value="">Region</option>
@@ -606,12 +232,12 @@
 										</form>
 									</div>
 						         </div>
-							</div>
-						</div>
-					</div>
-				</div>			  
-			  </div>
-        <!-- /Main Content Section -->
+							</div>						
+				   </div>
+				</div>
+			</div>			  
+		</div>
+		<!-- /Main Content Section -->
     
 {% endblock body %}
     

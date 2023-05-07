@@ -41,7 +41,7 @@ class Book(models.Model):
     category = models.ForeignKey(BookCategory, on_delete=models.CASCADE)
     description = models.TextField(blank=True, null=True)
     cover_image = models.ImageField(upload_to='book_covers/')
-    cover_image_thumbnail = ImageSpecField(source='cover_image', processors=[ResizeToFill(432, 624)], 
+    cover_image_thumbnail = ImageSpecField(source='cover_image', processors=[ResizeToFill(293, 440)], 
                                            format='JPEG', options={'quality': 60})
     owner = models.ForeignKey(BookOwner, on_delete=models.CASCADE)
     location = gis_models.PointField(null=True, blank=True)
@@ -60,7 +60,7 @@ class Book(models.Model):
         if not self.uuid:
             self.uuid = uuid.uuid4()
         if not self.slug:
-            self.slug = slugify(self.title) + '-' + str(self.timestamp.year) + '-' + str(self.timestamp.month) + '-' + str(self.timestamp.day)
+            self.slug = slugify(self.title) + '-' + self.owner.user.email.split('@')[0]
         if not self.location:
             try:
                 self.location = self.owner.location
