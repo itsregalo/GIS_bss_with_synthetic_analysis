@@ -52,6 +52,8 @@ class RegistrationForm(forms.Form):
     phone_number = forms.CharField(label='Phone No', max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Phone No'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control pass-input', 'placeholder': 'Password'}))
     confirm_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control pass-input', 'placeholder': 'Confirm Password'}))
+    # checkbox for current location
+    get_location = forms.BooleanField(required=False, widget=forms.CheckboxInput(attrs={'class': 'form-check-input', 'id': 'flexCheckDefault'}))
 
     fields = ['email', 'phone_number', 'password', 'confirm_password']
 
@@ -115,6 +117,7 @@ class RegistrationForm(forms.Form):
         email = self.cleaned_data.get('email')
         phone_number = self.cleaned_data.get('phone_number')
         password = self.cleaned_data.get('password')
+        get_location = self.cleaned_data.get('get_location')
 
         user = User.objects.filter(email=email)
         if user:
@@ -132,4 +135,7 @@ class RegistrationForm(forms.Form):
             )
         user.set_password(password)
         user.save()
+
+
+        
         return user

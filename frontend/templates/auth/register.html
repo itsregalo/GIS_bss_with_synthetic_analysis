@@ -82,6 +82,13 @@
 										<span class="toggle-password feather-eye"></span>
 									</div>
 								</div>
+								<div class="form-check">
+									{{register_form.get_location}}
+									<label class="form-check-label" for="flexCheckDefault">
+									  Get My current location
+									</label>
+								  </div>
+								  
 								<button class="btn btn-primary w-100 login-btn" type="submit">Create Account</button>
 								<div class="register-link text-center">
 									<p>Already have an account? <a class="forgot-link" href="{% url 'accounts:login' %}">Sign In</a></p>
