@@ -14,11 +14,10 @@ from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.contrib.auth import get_user_model
 from decouple import config
 
-from django.contrib.gis.geoip2 import GeoIP2
-from books.models import BookOwner
 from django.contrib.gis.geos import Point
-
+from location_tools.object import nom
 from .forms import LoginForm, RegistrationForm
+from books.models import BookOwner
 User = get_user_model()
 
 
@@ -83,7 +82,7 @@ def RegisterView(request):
     if request.method == 'POST':
         register_form = RegistrationForm(request.POST)
 
-        get_location = request.POST.get('get_location')
+        get_location = request.POST.get('your_location')
         if register_form.is_valid():
             user = register_form.save()
             
@@ -104,10 +103,10 @@ def RegisterView(request):
             messages.success(request, "Account created, Check your email to activate your account")
 
             if get_location:
-                g = GeoIP2()
-                user_location = g.lat_lon(request.META.get('HTTP_X_FORWARDED_FOR', request.META.get('REMOTE_ADDR')))
-                location = Point(user_location, srid=4326)
-                BookOwner.objects.create(user=user, location=location)
+                location = nom.geocode(get_location)
+                point = Point(location.longitude, location.latitude)
+                BookOwner.objects.create(user=user, location=point)
+                
             return redirect('accounts:login')
         print(register_form.errors)
     context = {

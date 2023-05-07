@@ -4,7 +4,7 @@ from django.contrib.gis.admin import OSMGeoAdmin
 
 @admin.register(BookOwner)
 class BookOwnerAdmin(OSMGeoAdmin):
-    list_display = ['location', 'address', 'city']
+    list_display = ['user', 'location', 'address', 'city']
 
 class BookCategoryAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug']
@@ -13,11 +13,10 @@ class BookCategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(BookCategory, BookCategoryAdmin)
 
-class BookAdmin(admin.ModelAdmin):
+@admin.register(Book)
+class BookAdmin(OSMGeoAdmin):
     list_display = ['title', 'author', 'category', 'owner', 'location', 'timestamp']
     list_filter = ['category', 'owner__city', 'timestamp']
-
-admin.site.register(Book, BookAdmin)
 
 class ReviewAdmin(admin.ModelAdmin):
     list_display = ['book', 'user', 'rating', 'created_at']

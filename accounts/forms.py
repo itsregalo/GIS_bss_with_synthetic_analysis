@@ -53,8 +53,8 @@ class RegistrationForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control pass-input', 'placeholder': 'Password'}))
     confirm_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control pass-input', 'placeholder': 'Confirm Password'}))
     # checkbox for current location
-    get_location = forms.BooleanField(required=False, widget=forms.CheckboxInput(attrs={'class': 'form-check-input', 'id': 'flexCheckDefault'}))
-
+    your_location = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Your Location', 
+                                                    'class':'form-control', 'help_text':'Enter your current location e.g Runda, Nairobi, Kenya'}))
     fields = ['email', 'phone_number', 'password', 'confirm_password']
 
     def clean_email(self):

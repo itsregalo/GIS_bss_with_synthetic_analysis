@@ -3,6 +3,9 @@ from accounts.models import User
 import uuid
 from django.contrib.gis.db import models as gis_models
 from django.utils.text import slugify
+# imagekit
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
 
 class BookOwner(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -14,14 +17,15 @@ class BookOwner(models.Model):
         db_table = 'book_owner'
 
     def __str__(self):
-        return self.user.username
+        return self.user.email
     
 class BookCategory(models.Model):
     name = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, blank=True)
 
     class Meta:
         db_table = 'book_category'
+        verbose_name_plural = 'book categories'
 
     def __str__(self):
         return self.name
@@ -29,18 +33,19 @@ class BookCategory(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
-
         return super(BookCategory, self).save(*args, **kwargs)
 
 class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
     category = models.ForeignKey(BookCategory, on_delete=models.CASCADE)
-    description = models.TextField()
+    description = models.TextField(blank=True, null=True)
     cover_image = models.ImageField(upload_to='book_covers/')
+    cover_image_thumbnail = ImageSpecField(source='cover_image', processors=[ResizeToFill(432, 624)], 
+                                           format='JPEG', options={'quality': 60})
     owner = models.ForeignKey(BookOwner, on_delete=models.CASCADE)
     location = gis_models.PointField(null=True, blank=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, blank=True)
     uuid = models.UUIDField(unique=True, editable=False)
     timestamp = models.DateTimeField(auto_now_add=True)
 
