@@ -57,13 +57,13 @@
 							</span>
 						</a>
 						<a href="{% url 'core:index' %}" class="navbar-brand logo">
-							<img src="{% static 'assets/img/logo.svg' %}" class="img-fluid" alt="Logo">
+							<img src="{% static 'assets/img/main-logo.png' %}" class="img-fluid" alt="Logo">
 						</a>						
 					</div>
 					<div class="main-menu-wrapper">
 						<div class="menu-header">
 							<a href="{% url 'core:index' %}" class="menu-logo">
-								<img src="{% static 'assets/img/logo.svg' %}" class="img-fluid" alt="Logo">
+								<img src="{% static 'assets/img/main-logo.png' %}" class="img-fluid" alt="Logo">
 							</a>
 							<a id="menu_close" class="menu-close" href="javascript:void(0);"> <i class="fas fa-times"></i></a>
 						</div>
@@ -79,44 +79,16 @@
 							<li class="has-submenu">
 								<a href="{% url 'books:book_list' %}">Members <i class="fas "></i></a>
 							</li>
-							<li class="has-submenu">
-								<a href="">Pages <i class="fas fa-chevron-down"></i></a>
-								<ul class="submenu">
-								    <li><a href="about.html">About Us</a></li>
-								    <li><a href="service-details.html">Service Details </a></li>
-									<li><a href="pricing.html">Pricing</a></li>
-									<li><a href="faq.html">FAQ</a></li>
-									<li><a href="gallery.html">Gallery</a></li>
-									<li><a href="categories.html">Category</a></li>
-									<li><a href="howitworks.html">How it Works</a></li>
-									<li><a href="terms-condition.html">Terms & Conditions</a></li>
-									<li><a href="privacy-policy.html">Privacy Policy</a></li>
-									<li><a href="error-404.html">404 Error</a></li>
-									<li><a href="error-500.html">500 Error</a></li>
-								</ul>
-							</li>
-							<li class="has-submenu">
-								<a href="">User Pages <i class="fas fa-chevron-down"></i></a>
-								<ul class="submenu">
-								    <li><a href="dashboard.html">Dashboard</a></li>
-									<li><a href="profile.html">Profile</a></li>
-									<li><a href="my-listing.html">My Listing</a></li>
-                                    <li><a href="bookmarks.html">Bookmarks</a></li>									
-									<li><a href="messages.html">Messages</a></li>									
-									<li><a href="reviews.html">Reviews</a></li>										
-									<li><a href="add-listing.html">Add Listing</a></li>										
-								</ul>
-							</li>
-							<li class="has-submenu">
-								<a href="">Blog <i class="fas fa-chevron-down"></i></a>
-								<ul class="submenu">
-								    <li><a href="blog-list.html">Blog List</a></li>
-									<li><a href="blog-grid.html">Blog Grid</a></li>
-									<li><a href="blog-details.html">Blog Details</a></li>									
-									<li><a href="blog-list-sidebar.html">Blog List Sidebar</a></li>									
-									<li><a href="blog-grid-sidebar.html">Blog Grid Sidebar</a></li>																
-								</ul>
-							</li>
+							
+							
+							
+							{% if request.user.is_superuser %}
+								<li class="has-submenu">
+									<a href="{% url 'books:book_list' %}">Admin <i class="fas "></i></a>
+								</li>
+							{% endif %}
+								
+							
 							<li><a href="contact.html">Contact</a></li>
 							
 							{% if request.user.is_authenticated %}
@@ -176,7 +148,7 @@
 							<!-- Footer Widget -->
 							<div class="footer-widget">
 								<div class="footer-logo">
-									<a href="#"><img src="assets/img/footerlogo.svg" alt="logo"></a>
+									<a href="#"><img src="assets/img/footermain-logo.png" alt="logo"></a>
 								</div>
 								<div class="footer-content">
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et magna aliqua.  </p>

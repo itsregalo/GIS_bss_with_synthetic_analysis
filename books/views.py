@@ -27,3 +27,16 @@ def members_listing(request, *args, **kwargs):
         'nearby_members': nearby_members
     }
     return render(request, 'members_listing.html', context)
+
+
+def member_detail(request, *args, **kwargs):
+    return render(request, 'member-detail.html')
+
+def book_search(request, *args, **kwargs):
+    return render(request, 'book-search.html')
+
+def add_book(request, *args, **kwargs):
+    return render(request, 'add-book.html')
+
+def contact_us(request, *args, **kwargs):
+    return render(request, 'contact-us.html')
