@@ -22,6 +22,7 @@ class BookOwner(models.Model):
 class BookCategory(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True, blank=True)
+    book_count = models.PositiveIntegerField(default=0)
 
     class Meta:
         db_table = 'book_category'
