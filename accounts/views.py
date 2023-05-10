@@ -103,10 +103,13 @@ def RegisterView(request):
             messages.success(request, "Account created, Check your email to activate your account")
 
             if get_location:
-                location = nom.geocode(get_location)
-                point = Point(location.longitude, location.latitude)
-                BookOwner.objects.create(user=user, location=point)
-                
+                try:
+                    location = nom.geocode(get_location)
+                    point = Point(location.longitude, location.latitude)
+                    BookOwner.objects.create(user=user, location=point)
+                except:
+                    point = Point(0.0, 0.0)
+                    BookOwner.objects.create(user=user, location=point)
             return redirect('accounts:login')
         print(register_form.errors)
     context = {

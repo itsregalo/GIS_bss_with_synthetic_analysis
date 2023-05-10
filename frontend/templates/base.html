@@ -77,14 +77,14 @@
 								<a href="{% url 'books:book_list' %}">books <i class="fas "></i></a>
 							</li>
 							<li class="has-submenu">
-								<a href="{% url 'books:book_list' %}">Members <i class="fas "></i></a>
+								<a href="{% url 'books:members_list' %}">Members <i class="fas "></i></a>
 							</li>
 							
 							
 							
 							{% if request.user.is_superuser %}
 								<li class="has-submenu">
-									<a href="{% url 'books:book_list' %}">Admin <i class="fas "></i></a>
+									<a href="/admin/">Admin <i class="fas "></i></a>
 								</li>
 							{% endif %}
 								

@@ -128,6 +128,7 @@ class RegistrationForm(forms.Form):
         
         # create user without username field
         user = User.objects.create(
+            username = email,
             first_name=first_name,
             last_name=last_name,
             email=email, 

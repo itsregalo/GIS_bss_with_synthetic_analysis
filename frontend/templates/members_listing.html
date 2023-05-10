@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Member Listing {% endblock title %}
+
+
+{% block css %}
+	<style>
+		#map-custom { height: 100%; }
+	</style>
+{% endblock css %}
+	
+
+
+{% block body %}
+
+
+		<!-- Main Content Section -->
+		<div class="list-content listmap-grid ">
+		    <div class="container-fluid">
+		        <div class="row">
+		     	    <div class="col-lg-6 listingmappage-content">
+		     	        <div class="listmapgrid-content">
+                            <div class="row sorting-div">
+								<div class="col-lg-4 col-md-4 col-sm-4 align-items-center d-flex">
+									<div class="count-search">
+										<p>Showing <span>1-8</span> of 10 Results</p>
+									</div>
+								</div>
+								<div class="col-lg-8 col-md-8 col-sm-8  align-items-center">
+							        <div class="sortbyset">
+							           <span class="sortbytitle">Sort by</span>
+							           <div class="sorting-select">
+					                     <select class="form-control select">
+											<option>Default</option>
+										    <option>Price Low to High</option>
+											<option>Price High to Low</option>
+										</select>
+                                 	   </div>
+									</div>
+									<div class="grid-listview">
+										<ul>
+											<li>
+												<a href="listingmap-list.html">
+													<i class="feather-list"></i>
+												</a>
+											</li>
+											<li>
+												<a href="listingmap-grid.html" class="active">
+													<i class="feather-grid"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="grid-view">
+								<div class="row ">
+								    
+									{% for member in nearby_members %}
+									<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+								        <div class="card">
+								            <div class="blog-widget">
+										     
+											 <div class="bloglist-content">
+											    <div class="card-body"> 
+                                                    <h6><a href="">{{ member.user.first_name }} {{ member.user.last_name }}</a></h6>																	 
+													<div class="blog-location-details">
+													   <div class="location-info">
+													     <i class="feather-map-pin"></i> 
+													   </div>
+													</div>
+												</div>	
+											  </div>			 
+									        </div> 
+									    </div>
+								    </div>
+									{% endfor %}
+										
+							    </div>
+							</div>
+							
+						
+											  
+                        </div>
+				   </div>
+				   <div class="col-lg-6">
+
+				        <div id="map-custom">
+							
+						</div>
+
+
+
+
+                        						
+				   </div>
+				</div>
+			</div>			  
+		</div>
+		<!-- /Main Content Section -->
+
+		
+		{% block script %}
+			<script>
+				var map = L.map('map-custom').setView([{{ book_owner.location.y }}, {{ book_owner.location.x }}], 13);
+				L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+					attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+					maxZoom: 18,
+				}).addTo(map);
+			
+				{% for member in nearby_members %}
+					var marker = L.marker([{{ member.location.y }}, {{ member.location.x }}]).addTo(map);
+					marker.bindPopup("<b>{{ member.user.first_name }}</b><br>{{ member.user.last_name }}<br><a href=''>View details</a>");
+				{% endfor %}
+
+				// red marker for book owner
+				var redIcon = new L.Icon({
+					iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+					shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+					iconSize: [25, 41],
+					iconAnchor: [12, 41],
+					popupAnchor: [1, -34],
+					shadowSize: [41, 41]
+				});
+				var marker = L.marker([{{ book_owner.location.y }}, {{ book_owner.location.x }}], {icon: redIcon}).addTo(map);
+			</script>
+		
+		{% endblock script %}
+			
+    
+{% endblock body %}
+    

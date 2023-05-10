@@ -1,3 +1,3 @@
-from geopy.geocoders import ArcGIS
+from geopy.geocoders import Nominatim
 
-nom = ArcGIS()
+nom = Nominatim(user_agent="gis_books", timeout=100)

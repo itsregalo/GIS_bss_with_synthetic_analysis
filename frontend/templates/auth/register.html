@@ -19,7 +19,7 @@
 			    	    <h2 class="breadcrumb-title">Create an Account</h2>
 				    	<nav aria-label="breadcrumb" class="page-breadcrumb">
 							<ol class="breadcrumb">
-								<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+								<li class="breadcrumb-item"><a href="{% url 'core:index' %}">Home</a></li>
 								<li class="breadcrumb-item active" aria-current="page">Register</li>
 							</ol>
 						</nav>							
@@ -38,7 +38,7 @@
 							
 							<div class="login-header">
 								<h3>Create an Account</h3>
-								<p>Lets start with <span>Listee</span></p>								
+								<p>Lets start with <span>GeoBooks</span></p>								
 							</div>
 							
 							<!-- Login Form -->
@@ -64,7 +64,7 @@
 								</div>
 								<div class="form-group group-img">
 								    <div class="group-img">
-										<i class="feather-user"></i>
+										<i class="feather-phone"></i>
 										{{register_form.phone_number}}
 									</div>
 								</div>
@@ -84,8 +84,9 @@
 								</div>
 								<div class="form-group group-img">
 								    <div class="group-img">
-										<i class="feather-user"></i>
+										<i class="feather-map"></i>
 										{{register_form.your_location}}
+										<p><small class="text-success">e.g Karatina, kenya</small></p>
 									</div>
 								</div>
 								  
