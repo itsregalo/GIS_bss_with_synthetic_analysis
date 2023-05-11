@@ -30,6 +30,7 @@ def book_listing(request, *args, **kwargs):
 def book_detail(request, *args, **kwargs):
     return render(request, 'book-detail.html')
 
+@login_required
 def members_listing(request, *args, **kwargs):
     nearby_members = BookOwner.objects.annotate(distance=Distance(
         'location', request.user.bookowner.location)).order_by('distance')[0:10]
@@ -57,7 +58,7 @@ def contact_us(request, *args, **kwargs):
     return render(request, 'contact-us.html')
 
 
-
+@login_required
 def post_book(request):
     if request.method == 'POST':
         form = BookForm(request.POST, request.FILES)
