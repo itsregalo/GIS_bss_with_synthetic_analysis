@@ -1,8 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect, redirect
 from .models import *
 from django.contrib.gis.geos import Point
 from django.contrib.gis.db.models.functions import Distance
 from django.contrib.auth.decorators import login_required
+from .forms import BookForm
+
+from django.contrib.gis.geos import Point
+from location_tools.object import nom
+
+from .models import *
+
 
 radius = 20
 
@@ -48,3 +55,33 @@ def add_book(request, *args, **kwargs):
 
 def contact_us(request, *args, **kwargs):
     return render(request, 'contact-us.html')
+
+
+
+def post_book(request):
+    if request.method == 'POST':
+        form = BookForm(request.POST, request.FILES)
+        # get the location from the form
+        location = request.POST.get('location')
+        print(location)
+        if form.is_valid():
+            book = form.save(commit=False)
+            book.owner = request.user.bookowner
+            book.save()
+            return redirect('books:book_list')
+        
+        else:
+            print(form.errors)
+            context = {
+                'form': form
+            }
+            return render(request, 'add-book.html', context)
+    else:
+        form = BookForm()
+        context = {
+            'form': form
+        }
+    return render(request, 'add-book.html', context)
+
+        
+        
