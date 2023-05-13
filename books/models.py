@@ -6,6 +6,7 @@ from django.utils.text import slugify
 # imagekit
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
+from django.urls import reverse
 
 class BookOwner(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -18,6 +19,9 @@ class BookOwner(models.Model):
 
     def __str__(self):
         return self.user.email
+
+    def get_absolute_url(self):
+        return reverse('books:member_books', kwargs={'member_id': self.id})
     
 class BookCategory(models.Model):
     name = models.CharField(max_length=200)

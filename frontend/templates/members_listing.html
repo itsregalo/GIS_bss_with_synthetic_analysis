@@ -111,7 +111,7 @@
 			
 				{% for member in nearby_members %}
 					var marker = L.marker([{{ member.location.y }}, {{ member.location.x }}]).addTo(map);
-					marker.bindPopup("<b>{{ member.user.first_name }}</b><br>{{ member.user.last_name }}<br>{{ member.user.phone_number }}<br><a href=''>View details</a>");
+					marker.bindPopup("<b>{{ member.user.first_name }}</b><br>{{ member.user.last_name }}<br>{{ member.user.phone_number }}<br><a href='{{ member.get_absolute_url }}'>View details</a>");
 				{% endfor %}
 
 				// red marker for book owner
