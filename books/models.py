@@ -40,6 +40,9 @@ class BookCategory(models.Model):
             self.slug = slugify(self.name)
         return super(BookCategory, self).save(*args, **kwargs)
 
+    def get_absolute_url(self):
+        return reverse('books:category_books', kwargs={'category_slug': self.slug})
+
 class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200, blank=True, null=True)
@@ -73,6 +76,9 @@ class Book(models.Model):
                 pass
 
         return super(Book, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('books:book_detail', kwargs={'book_id': self.id})
     
 
 class Review(models.Model):

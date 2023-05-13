@@ -1,0 +1,257 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{ book.title }} {% endblock title %}
+
+
+{% block body %}
+        <br>
+        <br>
+        <br>
+        <br>
+		<!--Details Description  Section-->
+		<section class="details-description">
+		    <div class="container">
+			     
+				  <div class="descriptionlinks">
+					<div class="row">
+						  <div class="col-lg-9">
+                            <h4>{{book.title}}</h4><br>
+							  <ul>
+								  <li><a href="javascript:void(0);"><i class="feather-map"></i> Get Directions</a></li>
+								  <li><a href="javascript:void(0);"><i class="feather-share-2"></i> share</a></li>
+								  <li><a href="javascript:void(0);"><i class="feather-flag"></i> report</a></li>
+							  </ul>
+						  </div>
+						  <div class="col-lg-3">
+							  <div class="callnow">
+								  <a href="phone:{{book.owner.user.phone_number}}"><i class="feather-phone-call"></i> Call Now</a>
+							  </div>
+						  </div>
+					 </div>
+				  </div>
+			</div>		
+		</section>
+		<!--/Details Description  Section-->
+		
+		<!--Details Main  Section-->
+		<div class="details-main-wrapper">	
+            <div class="container">
+			        <div class="row">
+					  <div class="col-lg-9">                             					
+							<div class="card ">
+								<div class="card-header">
+									<span class="bar-icon">
+									<span></span>
+									<span></span>
+									<span></span>
+									</span> 
+									<h4>Description</h4>
+								</div>
+								<div class="card-body">
+									<p>{{ book.description }}</p>
+								</div>
+							</div>					
+								
+						
+						
+						<!--Ratings Section-->
+						<div class="card ">
+							<div class="card-header  align-items-center">
+								<i class="feather-star"></i>
+								<h4>Ratings</h4>
+							</div>
+							<div class="card-body">
+						        <div class="ratings-content">											
+									<div class="row">
+									    <div class="col-lg-3">
+								          <div class="ratings-info">
+								 	        <p class="ratings-score"><span>4</span>/5</p>
+											<p>OVERALL</p>
+											<p> <i class="fas fa-star filled"></i>
+												<i class="fas fa-star filled"></i>
+												<i class="fas fa-star filled"></i>
+												<i class="fas fa-star filled"></i>
+												<i class="fa-regular fa-star"></i></p>
+											<p>Based on Listing</p>
+								 		  </div>   
+										</div>
+										<div class="col-lg-9">
+										   <div class="ratings-table table-responsive">
+										     <table class="">
+										        <tr>
+											       <td class="star-ratings"><i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i></td>
+											        <td class="scrore-width"><span> </span></td>
+													<td> 0</td>														   
+												</tr>
+												<tr>
+												    <td class="star-ratings" ><i class="fas fa-star filled"></i>
+												    	<i class="fas fa-star filled"></i>
+														<i class="fas fa-star filled"></i>
+														<i class="fas fa-star filled"></i>
+														<i class="fa-regular fa-star rating-color"></i>
+												    <td class="scrore-width selected"><span> </span></td>
+												    <td> 1</td>														   
+												</tr>
+												<tr>
+												    <td class="star-ratings"><i class="fas fa-star filled"></i>
+														<i class="fas fa-star filled"></i>
+														<i class="fas fa-star filled"></i>
+														<i class="fa-regular fa-star rating-color"></i>
+														<i class="fa-regular fa-star rating-color"></i></td>
+												    <td class="scrore-width"><span> </span></td>
+												    <td> 0</td>														   
+												</tr>
+												<tr>
+												    <td class="star-ratings"><i class="fas fa-star filled"></i>
+													    <i class="fas fa-star filled"></i>
+														<i class="fa-regular fa-star rating-color"></i>
+														<i class="fa-regular fa-star rating-color"></i>
+														<i class="fa-regular fa-star rating-color"></i>
+													<td class="scrore-width"><span> </span></td>
+													<td> 0</td>														   
+												</tr>
+												<tr>
+												    <td class="star-ratings"><i class="fas fa-star filled"></i>
+														<i class="fa-regular fa-star rating-color"></i>
+														<i class="fa-regular fa-star rating-color"></i>
+														<i class="fa-regular fa-star rating-color"></i>
+														<i class="fa-regular fa-star rating-color"></i></td>
+												    <td class="scrore-width"><span> </span></td>
+												    <td> 0</td>														   
+												</tr>
+											</table>
+									      </div>
+									    </div>
+									</div>
+								</div>
+							</div>
+						</div>							
+						<!--/Ratings Section-->
+							
+						<!--Review  Section-->
+						<div  class="card review-sec  mb-0">
+							<div class="card-header  align-items-center">
+								<i class="fa-regular fa-comment-dots"></i>
+								<h4>Write a Review</h4>
+							</div>
+							<div class="card-body">
+							    <div class="review-list">
+							        <ul class="">
+									    <li class="review-box ">
+											<div class="review-details">
+												<h6>Joseph</h6>
+												<div class="rating">
+                                                    <div class="rating-star">
+													   <i class="fas fa-star filled"></i>
+													   <i class="fas fa-star filled"></i>
+													   <i class="fas fa-star filled"></i>
+													   <i class="fas fa-star filled"></i>
+													   <i class="fa-regular fa-star rating-overall"></i>
+													</div>							        
+													<div><i class="fa-sharp fa-solid fa-calendar-days"></i> 4 months ago</div>
+													<div>by: Demo Test</div>
+												</div>	
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>																	
+													<div class="row">
+													    													
+													</div>
+												
+											</div>							
+								        </li>
+										
+										<li class="review-box feedbackbox mb-0">
+											<div class="review-details">
+											   <h6>Leave feedback about this</h6>
+										    </div>
+											<div class="card-body">
+												<form class="">
+													
+													<div class="form-group">
+       													<textarea rows="4" class="form-control"  placeholder="Write a Review*" required></textarea>
+													</div>
+													
+													<div class="submit-section">
+														<button class="btn btn-primary submit-btn" type="submit"> Submit Review</button>
+													</div>
+												</form>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+					    </div>	
+                        <!--/Review Section-->	
+							
+					</div>
+					<div class="col-lg-3 theiaStickySidebar">
+						<div class="rightsidebar">
+						    <div class="card">
+						     <h4><img  src="{% static 'assets/img/details-icon.svg' %}" alt="details-icon"> Details</h4>
+						     <ul>
+							    <li>Contract <span>For Rent</span></li>
+							    <li>Location <span>New York, USA</span></li>
+							    <li>Year Built <span>1988</span></li>
+							    <li>Rooms <span>3</span></li>
+							    <li>Beds <span>4</span></li>
+							 </ul>
+							</div>
+							<div class="card">
+							    <h4><img src="{% static 'assets/img/breifcase.svg' %}" alt=""> Business Info</h4>
+							    <div class="map-details">
+								  <div class="map-frame">
+								    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2238528387797!2d-122.41637708468208!3d37.78479337975754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858090475dcdc3%3A0x417fdbbd16e076ed!2s484%20Ellis%20St%2C%20San%20Francisco%2C%20CA%2094102%2C%20USA!5e0!3m2!1sen!2sin!4v1669879954211!5m2!1sen!2sin" width="200" height="160" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+								  </div>							  
+								  <ul class="info-list">
+								    <li><i class="feather-map-pin"></i> 484, Ellis st, San Fransisco,<br>CS 94102, United States</li>
+								    <li><i class="feather-phone-call"></i> + 62 8245 9875</li>
+								    <li><i class="feather-mail"></i> support@listee.com</li>
+								    <li><img src="{% static 'assets/img/website.svg' %}" alt="website"> www.listee.com</li>
+								    <li class="socialicons pb-0">
+									 <a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+									 <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+									 <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+									 <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+								    </li>
+								  </ul>
+								</div>
+							</div>
+							<div class="card">
+							    <h4><img src="{% static 'assets/img/statistic-icon.svg' %}" alt="location"> Statisfic</h4>
+							    <ul class="statistics-list">
+								    <li><div class="statistic-details"><span class="icons"><i class="fa-regular fa-eye"></i></span>
+								       Views </div><span class="text-end"> 453563</span></li>
+									<li><div class="statistic-details"><span class="icons"><i class="feather-star"></i></span>
+									   Ratings </div><span class="text-end"> 153</span></li>
+									<li><div class="statistic-details"><span class="icons"><i class="feather-heart"></i></span>
+										 Favuorites </div><span class="text-end"> 123</span></li>
+									<li class="mb-0"><div class="statistic-details"><span class="icons"><i class="feather-share-2"></i></span>
+									     Shares </div><span class="text-end"> 50</span></li>
+								</ul>
+							</div>
+						    <div class="card">
+							    <h4> <i class="feather-user"></i> Author</h4>
+							    <div class="sidebarauthor-details align-items-center">
+								   <div class="sideauthor-img">
+								     <img src="{% static 'assets/img/profiles/avatar-12.jpg' %}" alt="author">
+								   </div>
+								   <div class="sideauthor-info">
+								       <p class="authorname">Johnson</p>
+								       <p >Member since Nov 24, 2017</p>
+								   </div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>		
+		<!-- /Details Main Section -->
+		
+{% endblock body %}
+    

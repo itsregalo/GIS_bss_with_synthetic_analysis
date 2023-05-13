@@ -62,7 +62,7 @@
 								        <div class="card">
 								            <div class="blog-widget">
 										     <div class="blog-img">
-											    <a href="service-details.html">
+											    <a href="{{book.get_absolute_url}}">
 									    			<img src="{{book.cover_image_thumbnail.url}}" class="img-fluid" alt="blog-img">
 												</a>
                                                 <div class="fav-item">
@@ -74,7 +74,7 @@
                                              </div>
 											 <div class="bloglist-content">
 											    <div class="card-body"> 
-                                                    <h6><a href="service-details.html">{{ book.title}}</a></h6>																	 
+                                                    <h6><a href="{{book.get_absolute_url}}">{{ book.title}}</a></h6>																	 
 													<div class="blog-location-details">
 													   <div class="location-info">
 													     <i class="feather-map-pin"></i> {{book.city}}

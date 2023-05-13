@@ -27,8 +27,24 @@ def book_listing(request, *args, **kwargs):
     return render(request, 'books_listing.html', context)
 
 
-def book_detail(request, *args, **kwargs):
-    return render(request, 'book-detail.html')
+def category_books(request, category_slug, *args, **kwargs):
+    category = BookCategory.objects.get(slug=category_slug)
+    books = Book.objects.filter(category=category)
+    context = {
+        'category': category,
+        'books': books
+    }
+    return render(request, 'category-books.html', context)
+
+
+def book_detail(request, book_id, *args, **kwargs):
+    book = Book.objects.get(id=book_id)
+    book_owner = BookOwner.objects.get(user=request.user)
+    context = {
+        'book': book,
+        'book_owner': book_owner
+    }
+    return render(request, 'book-detail.html', context)
 
 @login_required
 def members_listing(request, *args, **kwargs):
