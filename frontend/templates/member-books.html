@@ -1,0 +1,283 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Member Listing {% endblock title %}
+
+
+{% block css %}
+	<style>
+		#map-custom { height: 100%; }
+	</style>
+{% endblock css %}
+	
+
+
+{% block body %}
+
+
+		<!-- Main Content Section -->
+		<div class="list-content listmap-grid ">
+		    <div class="container-fluid">
+		        <div class="row">
+		     	    <div class="col-lg-6 listingmappage-content">
+		     	        <div class="listmapgrid-content">
+                            <div class="row sorting-div">
+								<div class="col-lg-4 col-md-4 col-sm-4 align-items-center d-flex">
+									<div class="count-search">
+										<p>Showing <span>1-8</span> of 10 Results</p>
+									</div>
+								</div>
+								<div class="col-lg-8 col-md-8 col-sm-8  align-items-center">
+							        <div class="sortbyset">
+							           <span class="sortbytitle">Sort by</span>
+							           <div class="sorting-select">
+					                     <select class="form-control select">
+											<option>Default</option>
+										    <option>Price Low to High</option>
+											<option>Price High to Low</option>
+										</select>
+                                 	   </div>
+									</div>
+									<div class="grid-listview">
+										<ul>
+											<li>
+												<a href="listingmap-list.html">
+													<i class="feather-list"></i>
+												</a>
+											</li>
+											<li>
+												<a href="listingmap-grid.html" class="active">
+													<i class="feather-grid"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="grid-view">
+								<div class="row ">
+								    
+									{% for book in nearby_books %}
+									<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+								        <div class="card">
+								            <div class="blog-widget">
+										     <div class="blog-img">
+											    <a href="service-details.html">
+									    			<img src="{{book.cover_image_thumbnail.url}}" class="img-fluid" alt="blog-img">
+												</a>
+                                                <div class="fav-item">
+													<span class="Featured-text">{{book.category.name}}</span>
+											    	<a href="javascript:void(0)" class="fav-icon">
+														<i class="feather-heart"></i>
+													</a>										
+												</div>	
+                                             </div>
+											 <div class="bloglist-content">
+											    <div class="card-body"> 
+                                                    <h6><a href="service-details.html">{{ book.title}}</a></h6>																	 
+													<div class="blog-location-details">
+													   <div class="location-info">
+													     <i class="feather-map-pin"></i> {{book.city}}
+													   </div>
+													</div>
+													<div class="amount-details">
+														<div class="ratings">
+															<span>4.7</span> (50)
+												        </div>														
+													</div>	
+												</div>	
+											  </div>			 
+									        </div> 
+									    </div>
+								    </div>
+									{% endfor %}
+										
+							    </div>
+							</div>
+							
+							<!--Pagination--> 
+							<div class="blog-pagination">
+								<nav>
+							    	<ul class="pagination">
+								    	<li class="page-item previtem">
+											<a class="page-link" href="#"><i class="fas fa-regular fa-arrow-left"></i> Prev</a>
+										</li>
+									    <li class="justify-content-center pagination-center"> 
+											<div class="pagelink">
+									          <ul>
+													<li class="page-item">
+														<a class="page-link" href="#">1</a>
+													</li>
+													<li class="page-item active">
+														<a class="page-link" href="#">2 <span class="visually-hidden">(current)</span></a>
+													</li>
+													<li class="page-item">
+														<a class="page-link" href="#">3</a>
+												   </li>
+													<li class="page-item">
+														<a class="page-link" href="#">...</a>
+													</li>
+													<li class="page-item">
+														<a class="page-link" href="#">14</a>
+													</li>
+											   </ul>
+											</div>													
+										</li>													
+										<li class="page-item nextlink">
+											<a class="page-link" href="#">Next <i class="fas fa-regular fa-arrow-right"></i></a>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						    <!--/Pagination-->
+											  
+                        </div>
+				   </div>
+				   <div class="col-lg-6">
+
+				        <div id="map-custom">
+							
+						</div>
+
+
+
+
+                        <div class="showfilter">
+						        <button class="btn filterbtn">								   
+								    <span class="showfilter-btn"><img src="assets/img/details-icon.svg" alt="details-icon"> Show Filters</span>
+									<span class="hidefilter-btn"><i class="feather-eye-off"></i> Hide Filters</span>
+								</button>
+                                <div class="listings-sidebar">
+									<div class="card">
+										<h4><img  src="assets/img/details-icon.svg" alt="details-icon"> Filter</h4>
+										<form>
+											<div class="filter-content looking-input form-group">
+											  <input type="text" class="form-control" placeholder="What are you looking for?">
+											</div> 
+											<div class="filter-content form-group">  
+											   <select class="form-control select category-select">
+													<option value="">Choose Category</option>
+													<option>Computer</option>
+													<option>Electronics</option>
+													<option>Car wash</option>
+												</select>
+											</div>
+											<div class="filter-content looking-input form-group">
+												<div class="group-img">
+												  <input type="text" class="form-control" placeholder="Where to look?">
+												  <i class="feather-map-pin"></i>
+												</div>
+											</div>
+											<div class="filter-content form-group region">
+												<select class="form-control select region-select">
+													<option value="">Region</option>
+													<option>Canada</option>
+													<option>USA</option>
+													<option>india</option>
+												</select>						  
+											</div>
+											<div class="filter-content form-group amenities">
+												<h4> Amenities</h4>
+												<ul>
+													<li>
+														<label class="custom_check">
+														<input type="checkbox" name="wireless-internet">
+														<span class="checkmark"></span> Wireless Internet
+														</label>
+													</li>
+													<li>
+														<label class="custom_check">
+														<input type="checkbox" name="accept-credit-card">
+														<span class="checkmark"></span> Accepts Credit Cards 
+														 </label>
+													</li>
+													<li>
+														<label class="custom_check">
+														<input type="checkbox" name="Coupouns">
+														<span class="checkmark"></span> Coupouns
+														</label>
+													</li>
+													<li>
+														<label class="custom_check">
+														<input type="checkbox" name="parking-street">
+														<span class="checkmark"></span> Parking Street
+														</label>
+													</li>
+													<li>
+														<label class="custom_check">
+														<input type="checkbox" name="bike-parking">
+														<span class="checkmark"></span> Bike Parking
+														</label>
+													</li>
+													<li>
+														<label class="custom_check">
+														<input type="checkbox" name="Smoking-Allowed">
+														<span class="checkmark"></span> Smoking Allowed
+														</label>
+													</li>
+												</ul>
+											</div>
+											<div class="filter-content form-group amenities radius">
+												<div class="slidecontainer">
+													<div class="slider-info">
+														<h4> Radius</h4>
+														<div class="demo"><span>50</span> Radius</div>
+													</div>
+													<div class="clearfix"></div>
+													<div class="filter-range">
+														<input type="text"  class="input-range">
+													</div>
+												</div>
+											</div>									
+											<div class="filter-content amenities mb-0">
+												<h4> Price Range</h4>
+												<div class="form-group mb-0">
+													 <input type="text" class="form-control" placeholder="Min">
+													 <input type="text" class="form-control me-0" placeholder="Max">
+												</div>
+												<div class="search-btn">
+													<button class="btn btn-primary" type="submit"> <i class="fa fa-search" aria-hidden="true"></i> Search</button>
+													<button class="btn btn-reset mb-0" type="submit"> <i class="fas fa-light fa-arrow-rotate-right"></i> Reset Filters</button>
+												</div>  
+											</div>
+										</form>
+									</div>
+						         </div>
+							</div>						
+				   </div>
+				</div>
+			</div>			  
+		</div>
+		<!-- /Main Content Section -->
+
+		
+		{% block script %}
+			<script>
+				var map = L.map('map-custom').setView([{{ book_owner.location.y }}, {{ book_owner.location.x }}], 13);
+				L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+					attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+					maxZoom: 18,
+				}).addTo(map);
+			
+				{% for book in nearby_books %}
+					var marker = L.marker([{{ book.location.y }}, {{ book.location.x }}]).addTo(map);
+					marker.bindPopup("<b>{{ book.title }}</b><br>{{ book.description }}<br><a href=''>View details</a>");
+				{% endfor %}
+
+				// red marker for book owner
+				var redIcon = new L.Icon({
+					iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+					shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+					iconSize: [25, 41],
+					iconAnchor: [12, 41],
+					popupAnchor: [1, -34],
+					shadowSize: [41, 41]
+				});
+				var marker = L.marker([{{ book_owner.location.y }}, {{ book_owner.location.x }}], {icon: redIcon}).addTo(map);
+			</script>
+		
+		{% endblock script %}
+			
+    
+{% endblock body %}
+    

@@ -45,8 +45,14 @@ def members_listing(request, *args, **kwargs):
     return render(request, 'members_listing.html', context)
 
 
-def member_detail(request, *args, **kwargs):
-    return render(request, 'member-detail.html')
+def member_books(request, member_id, *args, **kwargs):
+    member = BookOwner.objects.get(id=member_id)
+    member_books = Book.objects.filter(owner=member)
+    context = {
+        'book_owner': member,
+        'nearby_books': member_books
+    }
+    return render(request, 'member-books.html', context)
 
 def book_search(request, *args, **kwargs):
     return render(request, 'book-search.html')
