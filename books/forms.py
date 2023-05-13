@@ -1,4 +1,4 @@
-from .models import Book 
+from .models import Book, BookReviewSentiment
 from django import forms
 
 from django.contrib.gis.geos import Point
@@ -29,9 +29,23 @@ class BookForm(forms.ModelForm):
             raise forms.ValidationError('Please enter a valid location.')
         
 
-    
+class BookReviewSentimentForm(forms.ModelForm):
+    class Meta:
+        model = BookReviewSentiment
+        fields = ('text',)
+        widgets = {
+            'text': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Enter your review here', 'rows': 3}),
+        }
+        labels = {
+            'text': '',
+        }
+        help_texts = {
+            'text': '',
+        }
+        error_messages = {
+            'text': {
+                'required': 'Please enter your review',
+            },
+        }
 
-    
-
-#  views.py
-
+        

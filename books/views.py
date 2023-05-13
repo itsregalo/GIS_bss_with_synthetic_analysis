@@ -7,6 +7,7 @@ from .forms import BookForm
 
 from django.contrib.gis.geos import Point
 from location_tools.object import nom
+from .forms import BookForm, BookReviewSentimentForm
 
 from .models import *
 
@@ -106,5 +107,26 @@ def post_book(request):
         }
     return render(request, 'add-book.html', context)
 
-        
+
+def post_review(request, book_id):
+    if request.method == 'POST':
+        form = BookReviewSentimentForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.book = Book.objects.get(id=book_id)
+            review.user = request.user
+            review.save()
+            return redirect('books:book_detail', book_id=book_id)
+        else:
+            print(form.errors)
+            context = {
+                'form': form
+            }
+            return render(request, 'book-detail.html', context)
+    else:
+        form = BookReviewSentimentForm()
+        context = {
+            'form': form
+        }
+    return render(request, 'book-detail.html', context)
         

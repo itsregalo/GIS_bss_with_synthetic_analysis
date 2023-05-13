@@ -120,3 +120,15 @@ class LendRequest(models.Model):
     def __str__(self):
         return self.book.title
     
+
+class BookReviewSentiment(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    review = models.OneToOneField(Review, on_delete=models.CASCADE)
+    text = models.TextField(blank=True, null=True)
+    sentiment_score = models.FloatField(null=True, blank=True)
+
+    class Meta:
+        db_table = 'book_review_sentiment'
+
+    def __str__(self):
+        return self.text
